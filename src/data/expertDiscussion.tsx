@@ -3,7 +3,7 @@ import { Chapter } from '../types';
 
 export const expertDiscussionChapter: Chapter = {
   id: "chapter-expert-discussion",
-  title: "有識者の議論より（パスワード）",
+  title: "予備室１（パスワード）",
   icon: <Lock className="w-5 h-5" />,
   password: "bms2026",
   subSections: [
