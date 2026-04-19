@@ -28,6 +28,7 @@ import { similaritiesChapter } from './data/similarities';
 import { pathophysiologyChapter } from './data/pathophysiology';
 import { treatmentMechanismChapter } from './data/treatmentMechanism';
 import { expertDiscussionChapter } from './data/expertDiscussion';
+import { expertLecturesChapter } from './data/expertLectures';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -923,5 +924,6 @@ export const chapters: Chapter[] = [
       }
     ]
   },
-  expertDiscussionChapter
+  expertDiscussionChapter,
+  expertLecturesChapter
 ];
