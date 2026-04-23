@@ -1,16 +1,9 @@
+import { useState } from 'react';
 import { Presentation } from 'lucide-react';
 import { Chapter } from '../types';
+import { QAAccordion, pasternakQAGroups } from './expertLecturesPasternakQA';
 
-export const expertLecturesChapter: Chapter = {
-  id: "chapter-expert-lectures",
-  title: "予備室２（パスワード）",
-  icon: <Presentation className="w-5 h-5" />,
-  password: "yuasa2026",
-  subSections: [
-    {
-      id: "famous-lecture",
-      title: "有名な先生の講義より",
-      content: (
+const famousLectureContent = (
         <div className="space-y-8">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="text-xl font-bold text-indigo-900 mb-6 border-b-2 border-indigo-100 pb-2">
@@ -304,12 +297,9 @@ export const expertLecturesChapter: Chapter = {
 
           </div>
         </div>
-      )
-    },
-    {
-      id: "harvard-pain-rounds-20260419",
-      title: "Harvard Interdisciplinary Pain & Headache Rounds 20260419",
-      content: (
+);
+
+const clarkContent = (
         <div className="space-y-8">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="text-xl font-bold text-indigo-900 mb-6 border-b-2 border-indigo-100 pb-2">
@@ -614,7 +604,65 @@ export const expertLecturesChapter: Chapter = {
 
           </div>
         </div>
-      )
-    }
-  ]
+);
+
+function PasternakContent() {
+  return (
+    <div className="space-y-8">
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-indigo-900 mb-6 border-b-2 border-indigo-100 pb-2">
+          Amy Pasternak, PharmD：Pharmacogenetics of Orofacial Pain
+        </h3>
+        <p className="text-sm text-gray-500 mb-6">
+          本タブは、Amy Pasternak 氏（PharmD、米国ミシガン大学）による講義「口腔顔面痛における薬理遺伝学（Pharmacogenetics of Orofacial Pain）」を、Q&A形式で再構成したものです。各質問を押すと「要約」と「解説」が展開し、別の質問を押すと先に開いていた項目は自動的に閉じます。
+        </p>
+        <QAAccordion groups={pasternakQAGroups} />
+      </div>
+    </div>
+  );
+}
+
+const TAB_DEFS = [
+  { id: 'famous', title: '有名な先生の講義より', content: famousLectureContent },
+  { id: 'clark', title: 'Glenn Clark, DDS：Case Studies and Literature Reviews in Orofacial Pain and Headache', content: clarkContent },
+  { id: 'pasternak', title: 'Amy Pasternak, PharmD：Pharmacogenetics of Orofacial Pain', content: <PasternakContent /> },
+];
+
+function TabContainer() {
+  const [activeTab, setActiveTab] = useState(TAB_DEFS[0].id);
+  const active = TAB_DEFS.find((t) => t.id === activeTab) || TAB_DEFS[0];
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2 border-b border-gray-200 mb-6 pb-2">
+        {TAB_DEFS.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-3 py-2 text-xs md:text-sm font-medium rounded-t-lg transition-colors border-b-2 -mb-[2px] text-left leading-snug ${
+              activeTab === tab.id
+                ? 'text-indigo-700 border-indigo-500 bg-indigo-50'
+                : 'text-gray-600 border-transparent hover:text-indigo-700 hover:bg-gray-50'
+            }`}
+          >
+            {tab.title}
+          </button>
+        ))}
+      </div>
+      <div>{active.content}</div>
+    </div>
+  );
+}
+
+export const expertLecturesChapter: Chapter = {
+  id: 'chapter-expert-lectures',
+  title: '予備室２（パスワード）',
+  icon: <Presentation className="w-5 h-5" />,
+  password: 'yuasa2026',
+  subSections: [
+    {
+      id: 'expert-lectures-tabs',
+      title: '講義一覧',
+      content: <TabContainer />,
+    },
+  ],
 };
