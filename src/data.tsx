@@ -924,6 +924,14 @@ export const chapters: Chapter[] = [
       }
     ]
   },
-  expertDiscussionChapter,
-  expertLecturesChapter
+  {
+    id: 'chapter-reserved-room',
+    title: '予備室（パスワード）',
+    icon: expertLecturesChapter.icon,
+    password: 'yuasa2026',
+    subSections: [
+      ...expertDiscussionChapter.subSections,
+      ...expertLecturesChapter.subSections,
+    ],
+  }
 ];

@@ -622,10 +622,541 @@ function PasternakContent() {
   );
 }
 
+const muraokaContent = (
+  <div className="space-y-8">
+    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <h3 className="text-xl font-bold text-indigo-900 mb-2 border-b-2 border-indigo-100 pb-2">
+        2026年4月 慶應OFPオープンセミナー：村岡 渡 先生
+      </h3>
+      <p className="text-sm text-gray-600 mb-6">
+        ―「魅力ある口腔顔面痛（Orofacial Pain：OFP）の世界」―
+        <br/>
+        慶應義塾大学医学部歯科口腔外科 オープンセミナー（2026年4月、第4火曜日 20:00〜）の冒頭講演を、
+        新人〜中堅歯科医・口腔外科医・関連職種に向けて極めて詳細に再構成・解説したものです。
+      </p>
+
+      {/* セクション 1：オープンセミナーの歴史 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          1. 慶應オープンセミナーの歴史的背景と運営体制
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            このセミナーは、和嶋浩一先生らが「<strong>口腔顔面痛（Orofacial Pain）</strong>」という概念を日本歯科界に持ち込んだ草創期、毎週開催の勉強会としてスタートしました。当初は「口腔顔面痛研究班」のメンバー中心の閉じた研究会でしたが、約15年前から品川区品野町キャンパスに会場を移し、「<strong>オープンセミナー</strong>」として近隣外部の歯科医も自由に参加可能となりました。
+          </p>
+          <p>
+            2020年、新型コロナ禍によって対面開催が困難になった3月、ZoomとGoogle Meetがまだ普及前夜だった時期にいち早くオンライン化に踏み切り、結果として<strong>全国から参加可能な体制</strong>へと進化しました。コロナ後も対面に戻さずWebを継続。その後、開催頻度を週1から月1回に変更し、現在は村岡渡先生が引き継いで運営しています。
+          </p>
+          <p>
+            参加者は歯科医に限らず、医科の先生（神経内科、ペインクリニック、精神科など）、薬剤師、理学療法士など多職種にわたり、毎回豊富な質疑応答が交わされる「<strong>双方向の学びの場</strong>」として定着しています。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 2：口腔顔面痛とは */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          2. 口腔顔面痛（OFP）とは何か：成り立ちと国際的位置づけ
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            口腔顔面痛（Orofacial Pain）は、もともと<strong>「顎関節症（TMD）と他の疾患を鑑別する必要性」</strong>から生まれた領域です。アメリカン・アカデミー・オブ・オロフェイシャルペイン（AAOP）が中心となって体系化し、Gary Heir先生らがその普及に尽力。村岡先生は、AAOPで活躍するヘア先生たちを<strong>「現代のシャーロック・ホームズ」</strong>と表現し、患者が診察室に入ってきた瞬間からの観察・推理が口腔顔面痛診療の本質であると強調しました。
+          </p>
+          <div className="bg-orange-50 border-l-4 border-orange-400 p-4 rounded">
+            <p className="font-bold text-orange-900 mb-1">最新の TMD コンセンサス</p>
+            <p>
+              米国歯科口腔顎顔面研究協会（<strong>AADOCR</strong>）が2010年版を改定した最新ステートメントでは、「TMDの鑑別が困難な場合は<strong>口腔顔面痛専門医にコンサルテーションすること</strong>、可能なら一緒に診療すること」が明記されました。これは口腔顔面痛が独立した診療領域として国際的に確立した証左です。
+            </p>
+          </div>
+          <p>
+            学術団体としては、<strong>日本口腔顔面痛学会（JSOP）</strong>、アジア口腔顔面痛学会（<strong>AAOFP & TMD：Asian Academy of Orofacial Pain & Temporomandibular Disorders</strong>）、米国口腔顔面痛学会（<strong>AAOP</strong>）、国際疼痛学会（IASP）の Orofacial Pain & Headache 部会などが連携しています。日本口腔顔面痛学会のテキスト『口腔顔面痛ガイドブック』は2023年8月に第3版が、AAOPのガイドラインも2023年に第7版が出版されています（クインテッセンス社の日本語版は第4〜5版で停止し、現在は英文のみ）。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 3：症例から推理する */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          3. シャーロック・ホームズ的観察の例：髭剃り写真から三叉神経痛を読む
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            講義冒頭、村岡先生は<strong>「右側の頬の一部だけ髭が剃り残されている男性」</strong>の写真を示し、研修医（新藤先生）に観察を促しました。この一枚から推理可能な疾患は：
+          </p>
+          <ul className="list-disc pl-5 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <li><strong>帯状疱疹後神経痛（PHN）</strong>：高齢男性で同部位に過去の帯状疱疹既往</li>
+            <li><strong>三叉神経痛（TN：第2枝）</strong>：洗顔・髭剃り・歯磨きが「トリガー」となる</li>
+            <li><strong>持続性特発性顔面痛（PIFP）</strong></li>
+          </ul>
+          <p>
+            実際には<strong>三叉神経第2枝の三叉神経痛</strong>の症例で、皮膚の特定部位を綿棒や指でなぞるとビリビリと電撃様の痛みが誘発されました。
+          </p>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p className="font-bold text-yellow-900 mb-1">三叉神経痛の特徴的な「不応期（refractory period）」</p>
+            <p>
+              一度発作を誘発した直後は、<strong>同じ部位を刺激しても痛みが出ない</strong>という現象があります。この「不応期」は三叉神経痛の極めて重要な鑑別点であり、<strong>「触れば毎回0.1秒でも痛む」場合は逆に三叉神経痛ではない可能性が高くなります</strong>。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 4：疾患→痛みの分類 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          4. 疾患と痛みの分類：「上から下」と「下から上」の双方向思考
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            口腔顔面痛の臨床推論は、<strong>疾患（病態）→ 痛みの種類</strong>と、<strong>患者の訴え（痛みの表現）→ 疾患</strong>の双方向で考えます。
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h5 className="font-bold text-blue-900 mb-2">疾患 → 痛み（演繹）</h5>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>顎関節症 → <strong>筋骨格性痛</strong>（体性深部痛）</li>
+                <li>三叉神経痛 → <strong>神経障害性痛</strong>（発作性）</li>
+                <li>片頭痛 → <strong>神経血管性痛</strong></li>
+                <li>帯状疱疹後神経痛 → <strong>神経障害性痛</strong>（持続性）</li>
+              </ul>
+            </div>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <h5 className="font-bold text-red-900 mb-2">痛み → 疾患（帰納＝臨床推論）</h5>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>「ヒリヒリ・ピリピリ」→ 表在性痛</li>
+                <li>「ズキズキ・ズーン・重い」→ 筋骨格性痛</li>
+                <li>「シクシク・チクチク」→ 内臓性痛</li>
+                <li>「ズキンズキン」→ 神経血管性痛（拍動性）</li>
+                <li>「電撃・突き刺す・鋭い」→ 発作性神経障害性痛</li>
+                <li>「ジリジリ・ピリピリが持続」→ 持続性神経障害性痛</li>
+              </ul>
+            </div>
+          </div>
+          <p>
+            臨床現場では患者から「疾患名」が与えられることはなく、必ず<strong>痛みの表現から疾患を逆推論</strong>します。よって、患者の言語表現を医学用語・診断基準上の用語に置き換える訓練が必要です。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 5：IASP 痛みの定義改定 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          5. IASP 痛みの定義 40年ぶりの改定（2020年）
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <p className="font-bold text-gray-800 mb-2">旧定義（1979年）</p>
+            <blockquote className="border-l-4 border-gray-300 pl-3 italic">
+              組織の実質的または潜在的な障害に基づいて起こる不快な感覚情動体験、<strong>あるいはそのような損傷があるように表現されるもの</strong>。
+            </blockquote>
+          </div>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <p className="font-bold text-indigo-800 mb-2">新定義（2020年）</p>
+            <blockquote className="border-l-4 border-indigo-400 pl-3 italic">
+              実際の組織損傷もしくは組織損傷が起こりうる状態に付随する、<strong>あるいはそれに類似した</strong>不快な感覚情動体験。
+            </blockquote>
+          </div>
+          <p>
+            最大の変化は、<strong>「実際に組織損傷がなくとも、それに類似した不快体験は痛みとなりうる」</strong>と明記された点です。fMRI 研究では、針刺し動画を視聴するだけで脳内の痛み関連領域が活性化することが確認されており、新定義はこうした知見と整合します。さらに付録には「痛みは人生経験を通じて学習される」「患者の訴えは尊重されるべき」など、<strong>哲学的・文化的記述</strong>が追加されています。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 6：3分類 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          6. 痛みの3分類と「痛覚変調性疼痛（Nociplastic Pain）」
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            IASPは新定義と並行して、痛みのメカニズムを3分類に整理：
+          </p>
+          <ol className="list-decimal pl-5 space-y-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <li><strong>侵害受容性疼痛（Nociceptive pain）</strong>：末梢の侵害受容器が活性化された痛み（針刺し・打撲など）</li>
+            <li><strong>神経障害性疼痛（Neuropathic pain）</strong>：体性感覚神経系の病変・疾患による痛み（三叉神経痛、帯状疱疹後神経痛、外傷性ニューロパチーなど）</li>
+            <li><strong>痛覚変調性疼痛（Nociplastic pain）</strong>：上記2つで説明できない痛み</li>
+          </ol>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">痛覚変調性疼痛の判定基準（参考）</h5>
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>3か月以上持続する慢性痛</li>
+              <li>地域的に広い分布（局在性に乏しい）</li>
+              <li>侵害受容性疼痛として説明できない</li>
+              <li>感覚過敏症状（アロディニア、痛覚過敏）が客観的に確認できる</li>
+            </ol>
+            <p className="mt-2">
+              このうち <strong>1 と 4</strong> を満たせば「可能性あり」、<strong>1〜4 すべて</strong>を満たせば「おそらく痛覚変調性疼痛」と判断します。
+            </p>
+          </div>
+          <p>
+            これまで原因不明だった慢性痛（線維筋痛症、IBS、慢性骨盤痛、口腔灼熱痛症候群（BMS）、持続性特発性歯痛など）の説明枠組みとして、痛覚変調性疼痛は革新的な概念です。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 7：歯学教育の現状 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          7. 慢性痛教育の貧困：医学・歯学モデル・コア・カリキュラムの問題点
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            日本の医学部・歯学部の<strong>モデル・コア・カリキュラム</strong>を調査すると、「頭痛」の記載は平成28年度版で医学部5件のみ、最新版でも医学部2件・歯学部では<strong>「慢性痛」という語が出てこない</strong>ことが判明しています。
+          </p>
+          <p>
+            つまり<strong>歯科学生は学部教育で慢性痛を体系的に習わない</strong>ということになります。卒後の自己研鑽（このようなオープンセミナー、JSOP の認定医・専門医試験など）が必須となる背景がここにあります。
+          </p>
+          <p>
+            これを補うべく、日本痛み関連学会連合（日本疼痛学会・日本ペインクリニック学会・JSOP 等の合同組織）が『<strong>慢性疼痛診療ガイドライン</strong>』を発行（第2版を経て、現在第3版を作成中）。歯科から JSOP が参画しています。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 8：ICHD-3 と ICOP */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          8. ICHD-3（2018）と ICOP（2020）：頭痛・口腔顔面痛の国際分類
+        </h4>
+        <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <h5 className="font-bold text-gray-800 mb-2">ICHD-3（International Classification of Headache Disorders, 3rd ed., Cephalalgia 2018 掲載）</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>第1部：一次性頭痛（片頭痛、緊張型頭痛、<strong>TACs</strong> など）</li>
+              <li>第2部：二次性頭痛（外傷後・血管性・腫瘍性・<strong>歯科原因による頭痛</strong>等）</li>
+              <li>第3部：有痛性脳神経ニューロパチー、その他の顔面痛・頭痛</li>
+            </ul>
+            <p className="mt-2">
+              <strong>TACs（Trigeminal Autonomic Cephalalgias：三叉神経・自律神経性頭痛）</strong>には群発頭痛（cluster headache）が含まれ、群発発作中に上顎臼歯部の歯痛として感じられる「歯痛様症状」が知られています。
+            </p>
+          </div>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">ICOP（International Classification of Orofacial Pain, 1st ed., 2020）</h5>
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>歯および関連構造に起因する痛み</li>
+              <li>筋・筋膜性口腔顔面痛（<strong>咀嚼筋痛</strong>）</li>
+              <li>顎関節痛（<strong>関節性顎関節症</strong>）</li>
+              <li>有痛性脳神経ニューロパチー（三叉神経痛・PTTN・PHN 等）</li>
+              <li>一次性頭痛様口腔顔面痛（片頭痛・群発頭痛様）</li>
+              <li>特発性口腔顔面痛（<strong>BMS</strong>・PIDAP・PIFP）</li>
+            </ol>
+            <p className="mt-2">
+              ICOP は ICHD-3 の枠組みを忠実に下敷きとして口腔顔面領域に拡張したもので、<strong>診断基準の文面はほぼ ICHD-3 と同一</strong>です。三叉神経痛は「典型的（古典的）」「二次性」「特発性」に区分されます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 9：三叉神経痛 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          9. 三叉神経痛の診断基準と鑑別ポイント
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>ICHD-3／ICOP に従う診断基準は概略以下：</p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>三叉神経の1枝以上の神経分布領域に限局した片側性の痛み</li>
+              <li>持続時間：<strong>数秒〜2分</strong>の発作性放電様痛みの繰り返し</li>
+              <li>性質：電気ショック様、ズキンとする、突き刺す、鋭い（<strong>4 つのうち 3 つ以上を満たす</strong>）</li>
+              <li>無害刺激（軽い接触・洗顔・歯磨き・髭剃り）で誘発</li>
+              <li>他の疾患でうまく説明できない</li>
+            </ul>
+          </div>
+          <p>
+            鑑別の要点：
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>歯痛・歯周炎・齲蝕との鑑別（口腔内刺激ではなく <strong>外的刺激</strong>で誘発）</li>
+            <li>顎関節症との鑑別（開口で誘発されない）</li>
+            <li><strong>不応期の存在</strong>（直前の発作直後は誘発不能）</li>
+            <li>10% は腫瘍・脱髄性疾患による<strong>二次性</strong>のため<strong>全例MRI必須</strong>。MRI 前に<strong>チェアサイドの12脳神経検査</strong>を必ず実施。</li>
+          </ul>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">薬物療法（国際ガイドライン共通）</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>第一選択：<strong>カルバマゼピン</strong></li>
+              <li>第二選択（海外）：ラモトリギン、バクロフェン</li>
+              <li>第二選択（日本）：ガバペンチン、プレガバリン</li>
+              <li>近未来追加候補：ミロガバリン（2019年承認、次回ガイドラインに収載見込）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 10：非歯原性歯痛 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          10. 非歯原性歯痛（Non-Odontogenic Toothache：NOT）
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            慶應病院口腔顔面痛外来における初診主訴の統計（村岡先生集計）：
+          </p>
+          <ul className="list-disc pl-5 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <li>歯の痛み：<strong>約45%</strong>（歯痛＋歯肉痛）</li>
+            <li>顔面の痛み・関節の痛み・歯肉の痛み</li>
+          </ul>
+          <p>
+            非歯原性歯痛は「歯に原因がないのに歯が痛い」状態の<strong>疾患群（Disease Group）</strong>であり、単一の診断名ではありません。誘導される病態（鑑別）：
+          </p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>筋筋膜性痛</strong>（咬筋・側頭筋トリガーポイントからの関連痛）</li>
+              <li><strong>発作性神経障害性痛</strong>（三叉神経痛）</li>
+              <li><strong>持続性神経障害性痛</strong>（PTTN、PHN）</li>
+              <li><strong>神経血管性痛</strong>（片頭痛・群発頭痛様歯痛）</li>
+              <li><strong>上顎洞疾患による歯痛</strong></li>
+              <li><strong>心臓疾患による歯痛</strong>（狭心症の関連痛は左下顎・咽喉に出現）</li>
+              <li><strong>精神疾患による歯痛</strong></li>
+              <li><strong>特発性歯痛（PIDAP）</strong></li>
+            </ul>
+          </div>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p className="font-bold text-yellow-900 mb-1">疫学データ（重要）</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>智歯抜歯後の神経障害性痛：<strong>0.38%</strong></li>
+              <li>インプラント術後の感覚障害：<strong>0.8%</strong>（うち痛み 0.3%）</li>
+              <li>根管治療後 6 か月以上痛みが続く：<strong>3〜7%</strong>（Nixdorf 2010 / Pain）</li>
+              <li>うち約半分（<strong>57%</strong>）は<strong>非歯原性歯痛</strong>であった</li>
+            </ul>
+            <p className="mt-2 text-xs">
+              Nixdorf らの予測因子分析では、「治療開始前の痛みの期間が長いほど」「治療への期待が大きいほど」治療後痛みが残りやすいと報告されています。元々非歯原性だった患者ほど追加処置で慢性化しやすいという解釈ができます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 11：問診表 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          11. 構造化問診票で「真面目な患者でも誤答する設問」とは
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>JSOPテキスト推奨の問診項目（横軸）：</p>
+          <ol className="list-decimal pl-5 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <li>痛みの場所はどこですか？</li>
+            <li>どのような種類の痛みですか？</li>
+            <li>痛みの強さは？</li>
+            <li>持続時間は？</li>
+            <li>頻度は？</li>
+            <li>増悪させる因子は？</li>
+            <li>軽減させる因子は？</li>
+            <li>時間的特徴は？</li>
+            <li>随伴症状は？</li>
+            <li>痛い時の行動は？</li>
+          </ol>
+          <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
+            <p className="font-bold text-red-900 mb-1">最大の落とし穴は <strong>1 番</strong>「痛みの場所」</p>
+            <p>
+              関連痛・移所性疼痛では<strong>痛みの発生源と感じる場所が一致しない</strong>ため、患者がいくら真面目に「歯肉が痛い」と答えても、原因は咀嚼筋など別組織にあるケースが頻発します。問診票の場所欄を鵜呑みにせず、必ず<strong>触診・関連痛誘発・診断的局所麻酔</strong>で検証することが必要です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 12：症例 1 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          12. 症例 1：抜歯・インプラント・再手術を繰り返した「右下 6 番痛」
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <h5 className="font-bold text-gray-800 mb-2">経過</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>49 歳女性、A 歯科で右下 6 番痛 → ヘミセクション（無効）→ 翌日抜歯（無効）</li>
+              <li>3 年後、別の歯科で「他の歯も問題」と言われインプラント埋入（無効）</li>
+              <li>痛みのため B 病院入院、「炎症」疑いで点滴、5 番の根管治療（無効）</li>
+              <li>右下インプラント上部構造を撤去（むしろ痛みが増悪）→ 再補綴・再手術（無効）</li>
+              <li>初診から 6 年後、慶應 OFP 外来を受診</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <h5 className="font-bold text-blue-900 mb-2">構造化問診の結果</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>場所：右下 6 番（患者の訴え）</li>
+              <li>表現：「うずく」「ズキンズキン」「重い感じ」</li>
+              <li>VAS：60/100、持続性、夕方〜寝る前に増悪</li>
+              <li>食事や開口で増悪、寝ると軽減</li>
+              <li>頭痛も伴う、バファリンが少し効く</li>
+            </ul>
+          </div>
+          <p>
+            研修医（新藤先生）は鑑別として「咬合痛」「筋膜痛」を挙げました。慶應入院中に「テグレトール」が処方されていた経緯から、過去の医師らは三叉神経痛も疑っていたと推察されます。
+          </p>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">確定診断のプロセス</h5>
+            <ol className="list-decimal pl-5 space-y-1">
+              <li><strong>診断的局所麻酔</strong>を訴えのある歯肉に施行 → 痛みは軽減せず（歯原性ではない）</li>
+              <li><strong>右咬筋を触診</strong>すると圧痛があり、トリガーポイント注射（リドカイン）で<strong>痛みが半減</strong></li>
+              <li>結論：<strong>右咬筋から生じる右下 6 番の筋膜性関連痛</strong>（非歯原性歯痛）</li>
+            </ol>
+          </div>
+          <p>
+            治療：マッサージ＋ストレッチ＋経過長期化と頭痛併存のため<strong>少量アミトリプチリン（10〜20mg）</strong>を併用し、約 1〜2 か月で著明改善。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 13：質疑応答 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          13. 質疑応答：「アミトリプチリンを早期投与する判断基準は？」
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            石垣先生から「症例 1 でなぜ早期にトリプタノールを処方したのか、本当にトリプタノールが効いたのか分からない」という鋭い問いが提示されました。村岡先生の回答：
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <h5 className="font-bold text-gray-800 mb-2">早期 TCA 投与の判断基準（村岡先生の臨床経験）</h5>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>痛覚過敏（hyperalgesia）が触診で確認できる</strong>とき：通常の筋圧痛より過敏で、皮膚にもアロディニア様の反応がある場合
+              </li>
+              <li>
+                <strong>経過が長い慢性痛</strong>：中枢感作が成立している可能性が高い
+              </li>
+              <li>
+                <strong>緊張型頭痛など他の慢性痛が併発</strong>：TCA は緊張型頭痛の予防薬として国際的に推奨されており、併用効果が見込める
+              </li>
+              <li>
+                <strong>Active トリガーポイント</strong>（自発痛で関連痛が出ているもの）：単なる Latent TP より早期介入が望ましい
+              </li>
+            </ul>
+          </div>
+          <p>
+            さらにフロアからは、「2〜3 か月後にアウトカムを判定すると、TCA の薬効・自然軽快・<strong>医師との信頼関係（プラセボ的効果）</strong>を区別できないのでは」という根源的な批判もあり、村岡先生も「<strong>長期慢性痛では『正しい病態説明を受けたこと自体が治療になる</strong>』という側面が極めて大きい」と同意しました。TMD 領域でも、説明だけで顕著な改善を示す論文が複数あります。
+          </p>
+        </div>
+      </section>
+
+      {/* セクション 14：症例 2 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          14. 症例 2：インプラント術後の下唇しびれ＋痛み（PTTN）
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            右下 6 番インプラント埋入の翌日から下歯槽神経領域の<strong>下唇・オトガイ部のしびれ＋痛み</strong>を訴えた症例。
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <h5 className="font-bold text-gray-800 mb-2">診察所見</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>インプラント体が<strong>下顎管にぶつかる位置</strong>に埋入されていた</li>
+              <li>歯肉に持続的な「痛い感覚」あり、内側を触ると痛い</li>
+              <li>インプラント体への打診痛なし、対側歯への打診痛なし</li>
+              <li>下唇のブラシ・綿棒テストで触覚低下＋アロディニア</li>
+            </ul>
+          </div>
+          <p>
+            診断は ICOP の<strong>「外傷後三叉神経ニューロパチー（PTTN：Painful Post-Traumatic Trigeminal Neuropathy）」</strong>。これは ICHD-3 の診断基準に準拠して判定します。
+          </p>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">薬物療法（村岡先生の処方戦略）</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>急性期：<strong>プレドニン（ステロイド）</strong>＋抗ウイルス薬様アプローチ</li>
+              <li>持続期：<strong>メコバラミン（メチコバール）</strong>でしびれ改善</li>
+              <li>痛み制御：<strong>プレガバリン（リリカ）</strong>を主軸</li>
+            </ul>
+            <p className="mt-2">
+              2 か月後にはアロディニアによる痛みは大幅軽減、感覚は徐々に回復。<strong>完全回復に至る場合と至らない場合がある</strong>ため、患者への期待値設定が重要。
+            </p>
+          </div>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p className="font-bold text-yellow-900 mb-1">必須の検査ツール</p>
+            <p>
+              定量感覚検査（QST：Quantitative Sensory Testing）は<strong>セムショット・モノフィラメント</strong>を用いて行い、しびれの有無に有用。一方<strong>痛みやアロディニアの評価は定性感覚検査</strong>（綿棒・ピン・冷温刺激）が重要です。「<strong>歯科末梢神経機能検査</strong>」の保険算定には JSOP の研修受講が必須で、毎年研修会が開催されています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 15：神経障害性疼痛の薬物療法アルゴリズム */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          15. 神経障害性疼痛の薬物療法アルゴリズム（国際比較）
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>講義中に紹介された主要ガイドライン：</p>
+          <ul className="list-disc pl-5 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <li>日本ペインクリニック学会『神経障害性疼痛薬物療法ガイドライン』</li>
+            <li>英国 NICE ガイドライン</li>
+            <li>国際疼痛学会（IASP）NeuPSIG 推奨</li>
+          </ul>
+          <p>
+            これら 3 つのガイドラインで推奨薬はほぼ共通：
+          </p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>第一選択</strong>：三環系抗うつ薬（アミトリプチリン）、SNRI（デュロキセチン）、ガバペンチノイド（ガバペンチン、プレガバリン）</li>
+              <li><strong>第二選択</strong>：トラマドール</li>
+              <li><strong>第三選択</strong>：オピオイド、ボツリヌス毒素 A、リドカインパッチ等</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
+            <p className="font-bold text-red-900 mb-1">適応症の理解は必須</p>
+            <p>
+              アミトリプチリン（トリプタノール）の保険適用は<strong>「末梢性神経障害性疼痛」と「夜尿症」</strong>。<strong>筋膜痛への使用はオフラベル</strong>です。慢性筋膜痛・中枢感作改善目的での処方は、保険算定上の注意（病名選択）が必要です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* セクション 16：学会活動 */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          16. JSOP・AOOFP・AAOP 学会活動の年間スケジュール
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+            <h5 className="font-bold text-gray-800 mb-2">日本口腔顔面痛学会（JSOP）</h5>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>ベーシックセミナー</strong>：今年度から日本歯科医師会公式アプリ経由でオンライン受講可能（薄田先生主導）</li>
+              <li><strong>臨床推論実習セミナー（11/3、慶應）</strong>：認定医・専門医試験必須。臨床推論・筋触診・神経検査・アロディニア検査を一通り習得</li>
+              <li><strong>精神科セミナー</strong>：宮岡先生（精神科医）らを招いての多職種連携</li>
+              <li><strong>神経障害性痛シンポジウム</strong>：3 月開催</li>
+              <li><strong>学術大会</strong>：12/3〜5 東京ビッグサイトで Pain Japan Pain Week として合同開催。12/6 に大崎で口腔顔面痛単独サテライト・シンポジウム</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <h5 className="font-bold text-blue-900 mb-2">アジア（AOOFP & TMD）</h5>
+            <p>
+              2026 年 9/26〜27、<strong>インドネシア・バリ島</strong>開催。若手の国際学会デビューに最適、ポスター発表枠も豊富。
+            </p>
+          </div>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+            <h5 className="font-bold text-indigo-800 mb-2">アメリカ（AAOP）</h5>
+            <p>
+              <strong>フロリダ・ディズニーワールド内ホテル</strong>で開催（村岡先生発表時点で「明後日始まる」とのこと）。日大の大久保先生らが日本から参加予定。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* まとめ */}
+      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-8">
+        <h4 className="font-bold text-indigo-900 mb-2">本講演のテイクホーム・メッセージ</h4>
+        <ol className="list-decimal pl-5 space-y-1 text-sm text-indigo-900">
+          <li>口腔顔面痛は「シャーロック・ホームズ的観察」から始まる：髭剃り写真 1 枚で三叉神経痛を疑える</li>
+          <li>痛みは「疾患→分類」「分類→疾患」の双方向で考える</li>
+          <li>IASP 2020 改定の最大ポイントは「組織損傷がなくても痛みは生じうる」</li>
+          <li>痛覚変調性疼痛は BMS・PIDAP・PIFP・線維筋痛症などの説明枠組みとして登場</li>
+          <li>歯学教育では慢性痛を学ばないため、卒後の自己研鑽が必須</li>
+          <li>非歯原性歯痛の約 80% は「筋膜性」と「神経障害性」</li>
+          <li>問診票で最も信用できないのは「<strong>痛みの場所</strong>」── 必ず触診・診断的麻酔で検証</li>
+          <li>三叉神経痛は<strong>不応期の有無</strong>が最大の鑑別点。10% は二次性のため全例 MRI</li>
+          <li>慢性痛の改善には「正しい病態説明そのもの」が大きな治療効果を持つ</li>
+          <li>2026 年 4 月時点の運営は村岡渡先生、第 4 火曜 20:00〜21:30 オンライン開催</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+);
+
 const TAB_DEFS = [
   { id: 'famous', title: '有名な先生の講義より', content: famousLectureContent },
   { id: 'clark', title: 'Glenn Clark, DDS：Case Studies and Literature Reviews in Orofacial Pain and Headache', content: clarkContent },
   { id: 'pasternak', title: 'Amy Pasternak, PharmD：Pharmacogenetics of Orofacial Pain', content: <PasternakContent /> },
+  { id: 'muraoka-2026-04', title: '2026年4月の慶應OFPオープンセミナー：村岡渡先生', content: muraokaContent },
 ];
 
 function TabContainer() {
