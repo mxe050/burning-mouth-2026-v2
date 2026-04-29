@@ -1152,11 +1152,465 @@ const muraokaContent = (
   </div>
 );
 
+const retractionsContent = (
+  <div className="space-y-8">
+    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <h3 className="text-xl font-bold text-indigo-900 mb-2 border-b-2 border-indigo-100 pb-2">
+        20260429 Retracted Publications in Pain Medicine — and Beyond
+      </h3>
+      <p className="text-sm text-gray-600 mb-6">
+        Harvard Interdisciplinary Pain & Headache Rounds（Mass General Brigham 主催、2026年4月29日 8:00 AM EST）。
+        豪 Sydney の <strong>Dr. Michael Ferraro</strong>（NeuRA Centre for Pain IMPACT 博士研究員、IASP CRPS-SIG 共同議長次期、Cochrane アソシエートエディタ）と、
+        英 London の <strong>Prof. Neil O'Connell</strong>（Brunel University ロンドン校 エビデンスベース医療学教授、元 Cochrane Pain, Palliative & Supportive Care Group リーダー、IASP MESI-SIG 議長、enTRUST-PE ネットワーク科学コーディネーター）による合同講演。
+        座長は Dr. David Keith。Q&A は司会の<strong>Dr. David Keith</strong>と <strong>Dr. Ron Schaeffer</strong>、<strong>Dr. Lenny Cabin</strong> ら。
+      </p>
+
+      {/* PART 1: Ferraro */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          PART 1：Dr. Michael Ferraro「Retractions in Pain Research（疼痛研究における論文撤回）」
+        </h4>
+
+        <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+
+          {/* 1-1 retractionとは */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-1. 「Retraction（撤回）」の定義と目的</h5>
+            <p>
+              <strong>Committee on Publication Ethics（COPE）</strong>の定義によれば、retraction とは「<strong>結果や結論が信頼できないほど深刻な誤りや不正を含む論文を、文献から訂正し、読者に警告する仕組み</strong>」である。重要なのは <strong>「著者を罰するため」ではなく「文献を訂正するため」</strong>という点。
+            </p>
+            <p>
+              撤回理由は大きく分けて：
+            </p>
+            <ul className="list-disc pl-6 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <li><strong>正直な誤り（honest error）／単純な勘違い</strong></li>
+              <li><strong>研究／出版上の不正行為（misconduct）</strong></li>
+            </ul>
+            <p>COPE 2019 ガイドラインが挙げる撤回事由：</p>
+            <ul className="list-disc pl-6 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <li>重大な誤り（major error）</li>
+              <li>データの捏造（fabrication）／改ざん（falsification）</li>
+              <li>盗用（plagiarism）</li>
+              <li>無断重複出版（republication without attribution）</li>
+              <li>法的・倫理的問題</li>
+              <li>査読プロセスの不正操作</li>
+              <li>未開示の利益相反</li>
+            </ul>
+            <p>
+              さらに最新版では、近年の問題に対応して以下が追加された：
+            </p>
+            <ul className="list-disc pl-6 space-y-1 bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <li>画像の不規則性（image irregularities）</li>
+              <li>未開示の AI 利用</li>
+              <li><strong>論文工場（paper mill）による出版プロセスの組織的操作</strong></li>
+            </ul>
+          </div>
+
+          {/* 1-2 急増 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-2. Retraction は増えているのか？</h5>
+            <p>
+              <strong>Mario Galdino ら（JAMA Internal Medicine, 2024）</strong>の解析によれば、1985 年以降 <strong>論文撤回率は急激に上昇</strong>しており、特に研究不正による撤回率が増加傾向にある（直近で見える減少は、出版から撤回までのタイムラグによる見かけ上のもの）。
+            </p>
+            <p>
+              世界的権威 <strong>Daniela Fanelli</strong> はこれを「<strong>多くは良い兆候</strong>」と評する。なぜなら、信頼できないデータを発見する能力が向上し、撤回への意欲も高まっているからである。ただし<strong>Paper mill 由来の撤回は明確な悪い兆候</strong>であり、BMJ の解析では 2013 年頃から急上昇している。
+            </p>
+          </div>
+
+          {/* 1-3 pain field研究 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-3. 疼痛分野の Retraction 調査（Ferraro et al., 2023）</h5>
+            <p>
+              Ferraro らは <strong>Retraction Watch Database</strong>（撤回論文の包括データベース、毎日更新）を用いて、痛みのメカニズム研究、痛み軽減を目的とした治療試験、痛みをアウトカムとする研究を網羅的に調査。
+            </p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <h6 className="font-bold text-gray-800 mb-2">主要結果</h6>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>36年間で <strong>389件の撤回論文</strong> を同定</li>
+                <li>
+                  2 つの突出したピーク：
+                  <ul className="list-disc pl-5 mt-1">
+                    <li><strong>2009 年</strong> ── 麻酔科医 <strong>Scott Reuben</strong> による大量の捏造臨床試験の一斉撤回</li>
+                    <li><strong>2020 年以降</strong> ── COVID-19 パンデミックの副次効果（研究時間が減り他者の論文を精査する時間が増えた）</li>
+                  </ul>
+                </li>
+                <li>研究デザイン：約 <strong>75% が臨床研究</strong></li>
+                <li>主要な臨床領域：周術期・術後痛、変形性関節症、脊椎痛、関節リウマチ、神経障害性疼痛</li>
+                <li>前臨床研究では OA・RA・神経障害性疼痛の動物モデルが多い</li>
+              </ul>
+            </div>
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+              <p className="font-bold text-yellow-900 mb-1">撤回理由の内訳</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>不正行為由来：66%</strong>（データ改ざん、データ重複、盗用、倫理承認の欠如）</li>
+                <li>その他：34%（ただし真の不正率はこれより高い可能性が高い ── 不正の証明は困難であり、撤回通知が「不正の示唆」止まりに留まることが多いため）</li>
+              </ul>
+            </div>
+            <p>
+              第一著者の所属国 Top 5：<strong>中国・日本・米国・韓国・ドイツ</strong>。3/4 が臨床所属。Fanelli らは絶対的な出版数で補正すると <strong>豪州・ドイツ・インド・中国が撤回されやすい</strong> と報告。意外なことに「出版圧力」より、「研究不正方針が法的に定義されていない国」「論文への現金インセンティブがある国」で撤回が多いことを発見。
+            </p>
+          </div>
+
+          {/* 1-4 影響と汚染 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-4. 撤回後も文献を汚染し続ける問題</h5>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>出版〜撤回までの間隔は短縮傾向だが、不正絡みは依然として長い</li>
+              <li>掲載誌の中央値 IF は 3.8（IF 第 1〜3 四分位に均等分布）</li>
+              <li>撤回論文の <strong>1/4 が PDF 透かし／リンクで撤回ラベルを持たない</strong></li>
+              <li>Kataoka らの解析：撤回論文を引用するシステマティックレビューや診療ガイドラインの <strong>43% が撤回後に出版</strong>されている</li>
+              <li>Allyson Aanell らの解析：骨粗鬆症メタアナリシスの <strong>20% は撤回論文を除外すると結論が変わる</strong></li>
+              <li>Elisabeth Sweltzer の調査：撤回ラベリングが ICMJE の 7〜8 基準を満たしている割合は <strong>50% 未満</strong></li>
+              <li>Christophe Bauer：PubMed で見つかる撤回の <strong>最大 55%</strong> が他のデータベースで識別不能</li>
+            </ul>
+          </div>
+
+          {/* 1-5 対策 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-5. 撤回論文の汚染を減らす実務的戦略</h5>
+            <p>
+              ICMJE は「撤回論文を引用してはならない（撤回そのものに言及する場合を除く）」と<strong>著者に義務付けている</strong>が、これを認識している研究者は少ない。Ferraro らは Journal of Pain で対策を提言：
+            </p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-2">
+              <p className="font-bold text-blue-900">著者レベル</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>システマティックレビュー検索戦略を <strong>撤回・懸念表明（expression of concern）まで捕捉できるよう設計</strong>（情報専門家との協働必須）</li>
+                <li>論文投稿前に <strong>引用文献の撤回チェックを習慣化</strong></li>
+                <li>Zotero / EndNote が Retraction Watch と連携（24h 毎更新）。撤回されると通知が届き、引用時に警告</li>
+              </ul>
+            </div>
+            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 space-y-2">
+              <p className="font-bold text-indigo-900">ジャーナルレベル</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Ferraro らは Top 20 疼痛ジャーナル・Top 20 麻酔ジャーナルの投稿規程を監査。撤回チェック推奨もガイダンスもなかった</li>
+                <li>テンプレート付きフィードバック介入で 12 か月後に：<strong>疼痛系 5 誌</strong>、<strong>麻酔系 2 誌</strong>が方針改定</li>
+              </ul>
+            </div>
+            <p>
+              ツール例：<strong>Scite</strong>（PDF/Word を投入すると引用文献を自動スキャンし撤回論文を検出）。
+            </p>
+          </div>
+
+          {/* 1-6 一次予防 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">1-6. そもそも信頼できない論文を文献に入れない（一次予防）</h5>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Jack Wilkinson（Manchester 大）</strong>の RCT 信頼性評価ツール（NIHR 助成、Cochrane 後援）── 個別参加者データ版（IPD 拡張）も開発中</li>
+              <li><strong>Adrian Barnett（Queensland 大）</strong>の機械学習による Paper mill 検出ツール（がん研究で検証済み、高い診断性能）</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      {/* PART 2: O'Connell */}
+      <section className="mb-8">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          PART 2：Prof. Neil O'Connell「enTRUST-PE：Enhancing Trust in Pain Evidence」
+        </h4>
+
+        <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+
+          {/* 2-1 trustworthiness */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-1. 「Trustworthiness（信頼性）」とは何か</h5>
+            <p>
+              Google 辞書定義：「<strong>正直または真実として依拠できる能力</strong>」（"the ability to be relied on as honest or truthful"）。例文「<em>he has to prove his trustworthiness to you</em>」が示すように、<strong>立証責任は研究者側</strong>にある。
+            </p>
+            <p>
+              従来の Trust 評価は「方法論的厳密性 + 透明性」（risk of bias 評価）に焦点を当ててきた。これは現代でも極めて重要であり、その重要性を端的に示す例が <strong>IASP カンナビノイド・タスクフォース</strong>。
+            </p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <h6 className="font-bold text-gray-800 mb-2">IASP カンナビノイド・タスクフォースの結論（Solomon, O'Connell ら）</h6>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>374 件の機序研究 → 報告品質が極めて低く、<strong>すべて risk of bias 不明</strong></li>
+                <li>既存システマティックレビューの 86% が AMSTAR-2 で「critically low / low confidence」</li>
+                <li>de novo SR：36 RCT、計 7,000 例 → すべて high or unclear risk of bias、エビデンスの確実性は <strong>low or very low</strong></li>
+                <li>結論：「<strong>カンナビノイド／カンナビス／CBM の有効性・安全性を支持も否定もしない</strong>」</li>
+              </ul>
+              <p className="mt-2 text-xs">
+                ── これこそ <strong>Research Waste（研究の浪費）</strong>の典型。膨大な労力が信頼できる答えを生み出していない。
+              </p>
+            </div>
+          </div>
+
+          {/* 2-2 QRP */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-2. Questionable Research Practices（QRP）の脅威</h5>
+            <p>
+              方法論的厳密性以外にも、<strong>QRP（疑わしい研究行為）</strong>と呼ばれる「不正には至らないが灰色領域」の行動が信頼性を脅かす：
+            </p>
+            <ul className="list-disc pl-6 space-y-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <li><strong>P-hacking</strong> ── 有意な結果が出るまで複数の解析を試行</li>
+              <li><strong>データ平滑化／外れ値除去</strong>を非透明に実施</li>
+              <li><strong>HARKing</strong>（Hypothesizing After the Results are Known）── 結果を見てから仮説を構築し、当初計画かのように提示</li>
+              <li>事後（post-hoc）の探索的解析を、計画的解析として提示</li>
+            </ul>
+          </div>
+
+          {/* 2-3 誰にとっての信頼性か */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-3. 「誰にとっての信頼性か？」── 包摂性の問題</h5>
+            <p>
+              疼痛研究は、患者の声・経験を排除した質問設定、女性・高齢者・併存疾患者・特定地域住民の系統的排除や過小代表、前臨床研究での <strong>「特定遺伝系統の若い雄ラット」一辺倒</strong>といった問題により、対象者にとって信頼できる結果を生み出さない可能性がある。
+            </p>
+          </div>
+
+          {/* 2-4 透明性 */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-4. アクセス可能な情報はどこまでか？</h5>
+            <p>
+              論文を読むとき、<strong>もとの研究計画（プロトコル）・解析コード・ツール・実材料・生データ</strong>へのアクセスは多くの場合存在せず、研究者が「見せたいデータ」と「研究者の解釈」のみを我々は受け取り、残りは「信仰の問題」として受け入れている。
+            </p>
+          </div>
+
+          {/* 2-5 conflicts */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-5. 利益相反（COI）と「Spin（スピン）」</h5>
+            <p>
+              疼痛医療の歴史に商業的利益相反が深く関わってきたことは周知の通り。しかし<strong>専門的・イデオロギー的利益相反</strong>も同等に問題であり、開示はしばしば形式的・部分的。
+            </p>
+            <p>
+              さらに <strong>Spin（ナラティブ・バイアス）</strong>── 不確実性を認めず、肯定的結果を選択的に強調、否定的結果を過小報告、誇張表現や Hype（誇大宣伝）── が疼痛研究にも蔓延しており、<strong>科学コミュニケーションが「マーケティング」に転落するリスク</strong>がある。
+            </p>
+          </div>
+
+          {/* 2-6 Misconduct survey */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-6. 不正の規模 ── Fanelli の自己申告調査</h5>
+            <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
+              <p className="font-bold text-red-900 mb-2">研究者へのアンケート（社会的バイアスにより<strong>過小評価</strong>と考えられる）</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>「QRP を行ったことがある」と認める：<strong>約 1/3</strong></li>
+                <li>「捏造／改ざん／改変を行ったことがある」と認める：<strong>約 2%</strong></li>
+                <li>「同僚が QRP をしていた」と観察：<strong>72%</strong></li>
+                <li>「同僚が捏造／改ざん／改変をしていた」と観察：<strong>14%</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 2-7 paper mill / AI */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-7. 現代の脅威：オープンアクセス革命の副作用、Paper mill、AI</h5>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Predatory journals（捕食誌）／低品質誌</strong>の台頭 ── pay-to-play で品質保証が機能しない</li>
+              <li><strong>Paper mill</strong> ── 捏造論文や著者権を金銭で売買する組織</li>
+              <li><strong>AI による加速</strong> ── 行ったことのない研究の論文を量産可能に。Barnett らの機械学習解析では、<strong>がん研究 264 万 7,000 本のうち約 10%</strong>が paper mill 候補としてフラグ</li>
+              <li>特に <strong>前臨床・機序研究</strong>で paper mill が優勢</li>
+            </ul>
+            <blockquote className="border-l-4 border-indigo-400 pl-4 italic bg-indigo-50/60 py-3 mt-3">
+              「我々のエビデンスの海には深刻なプラスチック汚染がある」── Neil O'Connell
+            </blockquote>
+            <p className="mt-2">
+              元 BMJ 編集長 <strong>Richard Smith</strong>：「<strong>もはや研究は誠実に実施・報告されたと仮定するのではなく、反証がない限り信頼できないと仮定する時期に来たのかもしれない</strong>」
+            </p>
+          </div>
+
+          {/* 2-8 enTRUST-PE Framework */}
+          <div>
+            <h5 className="font-bold text-indigo-700 mb-2">2-8. enTRUST-PE フレームワーク</h5>
+            <p>
+              ERA-NET NEURON 共同助成のネットワーク・プロジェクト。国際的・学際的（臨床医、基礎研究者、若手〜ベテラン、当事者、方法論者）グループが West London で 2 日間集中討議し、年間を通じて構築。
+            </p>
+            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 space-y-2">
+              <p className="font-bold text-indigo-900">中核価値（Core Values）</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Integrity & Governance</strong>（誠実性と統治）── すべての基盤</li>
+                <li><strong>Equity, Diversity & Inclusivity</strong>（公平性・多様性・包摂性）</li>
+                <li><strong>Patient & Public Involvement and Engagement（PPIE）</strong>── 当事者と協働で問いと方法を選ぶ</li>
+                <li><strong>Methodological Rigour</strong>（方法論的厳密性）</li>
+                <li><strong>Openness & Transparency</strong>（開放性と透明性）── 英国心理学会の言葉「<strong>可能な限り開放、必要な限り閉鎖</strong>」</li>
+                <li><strong>Balanced Communication</strong>（バランスある情報伝達）</li>
+                <li><strong>Vigilance against Error & Misconduct</strong>（誤りと不正への警戒）</li>
+              </ul>
+            </div>
+            <p>
+              研究者は孤立した存在ではなく、<strong>機関、助成団体、規制当局、政策立案者、査読者、編集者、出版社、研究消費者、当事者</strong>が織り成す複雑なエコシステムで活動する。研究者自身も「メンター」「編集者」「助成パネル委員」「リーダー」など複数の役割を持つ。
+            </p>
+            <p>
+              無料リソース（オープンアクセス）：
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>White paper</strong>（約 20,000 語、Open Science Framework）</li>
+              <li>役割別 <strong>Executive summary</strong>（研究者・機関・助成者・編集者・査読者・当事者向け）</li>
+              <li>研究プロジェクト一生涯の Trust 構築ロードマップ</li>
+              <li>Journal of Pain に 4,000 語の <strong>Call to Action</strong></li>
+            </ul>
+            <p>
+              発表後、<strong>IASP、EFIC（欧州疼痛連盟）、USAP、Australian Pain Society、British Pain Society</strong>から正式エンドースメント。さらに <strong>15 の疼痛・麻酔系ジャーナル編集者の合同声明</strong>として「Editorial Commitment to Trust and Integrity in Pain Science」が共同発表された。
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Q&A */}
+      <section className="mb-2">
+        <h4 className="text-lg font-bold text-indigo-800 mb-4 bg-indigo-50 p-2 rounded">
+          Q&A セッション（一字一句逐語的に解説）
+        </h4>
+
+        {/* Q1 */}
+        <div className="mb-6 border-l-4 border-indigo-400 pl-4">
+          <p className="font-bold text-indigo-900 mb-2">
+            Q1（Dr. Richard Harold）：1980 年 NEJM の「1% 未満説」になぜ撤回まで何年もかかったのか？
+          </p>
+          <p className="text-sm text-gray-700 mb-2 italic">
+            「1980 年、NEJM が短い editorial を掲載し、入院中にオピオイド処方を受けた患者で依存症となるのは 1% 未満であると結論した。これは何年も引用され、Big Pharma が徐放性オキシコドンのマーケティングに利用した。撤回されるまで何年もかかったのはなぜか、また、その遅延と撤回の影響は？」
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm text-gray-700">
+            <p className="font-bold">Neil O'Connell の回答（個人的見解）：</p>
+            <p>
+              「決定的な答えはなく、極めて複雑です。まず<strong>歴史的文脈</strong>── 当時の疼痛医学・疼痛研究で要求されていた方法論と報告基準は今日とは違いました。さらに、<strong>シニア医師の声の力</strong>── 確固たる厳密なデータがなくとも、その意見が通ってしまうという背景がある。だから『なぜそんな緩い文書が掲載されたのか』という問いは、半分歴史的なものです。今なら掲載されないと信じたいですが、現代のジャーナルでも 100% の確信は持てません。」
+            </p>
+            <p>
+              「なぜ撤回されなかったか？ ── <strong>提示されていないデータが偽であることを示すのは難しい</strong>。そして撤回には<strong>意志</strong>が必要であり、コミュニティから声を上げ、行動を起こし、行動変化を強制するほど粘り強い人が必要です。」
+            </p>
+            <p>
+              「私たちは <strong>CBT for pain の信頼できない可能性のある臨床試験</strong>に対して同様の経験をしました。単一著者グループの複数の論文を法医学的（forensic）に解析し、編集者に詳細な懸念点を提示したところ、反応はバラバラでした ── <strong>推奨実務に完全準拠して迅速に調査・撤回した編集者</strong>から、<strong>「学術的脅迫だ」と非難し査読プロセスへの信頼を表明した編集者</strong>まで様々。<strong>編集者・出版社が問題行動に対して必ずしもオープンに行動するわけではない</strong>という現実です。」
+            </p>
+            <p className="font-bold">Michael Ferraro の補足：</p>
+            <p>
+              「ジャーナルの利益のために言うなら、当時 COPE のガイダンスがまだ存在しなかった可能性はあります。しかし、それだけが理由とは思いません。<strong>編集者は捏造の可能性を認めることに常に消極的</strong>で、<strong>法的挑戦を呼ぶ声明の発表を恐れる傾向</strong>があります。」
+            </p>
+          </div>
+        </div>
+
+        {/* Q2 */}
+        <div className="mb-6 border-l-4 border-indigo-400 pl-4">
+          <p className="font-bold text-indigo-900 mb-2">
+            Q2（Dr. David Keith 自身）：画像盗用で撤回された論文をどう引用するか？
+          </p>
+          <p className="text-sm text-gray-700 mb-2 italic">
+            「私が出版する分野で、当初は信頼できそうだった有名研究者の論文が、図の盗用で撤回・訴訟になった。研究自体は他の点では有用に見える。私はその文献を引用する際、訴訟へのリンクを併記している。これは適切か？」
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm text-gray-700">
+            <p className="font-bold">Neil O'Connell の回答：</p>
+            <p>
+              「素晴らしい質問です。偽の図、複製図（他ラボや自ラボから）、Photoshop 加工された画像 ── これらによる撤回は膨大に発生しています。<strong>Elisabeth Bik</strong> がこの分野で生命科学全般にわたり多大な貢献をしてきました。」
+            </p>
+            <p>
+              「<strong>図が偽である／加工されている／データを正確に反映していない</strong>と判明した論文は、<strong>論文全体に対する重大な懸念</strong>を喚起します。私がもしその論文を出版する立場なら、<strong>論文の元データを見て、他のすべての結論についても完全な due diligence を行う</strong>ことを求めます。」
+            </p>
+            <p>
+              「読者・コメンテーターとしては、<strong>偽造／複製された図は『炭鉱のカナリア』として、研究実践全体の悪さを示すかなり強いシグナル</strong>です。データを正確に反映しない図がどうやって論文に入り込んだのか ── これは研究者が答えるべき正当な疑問です。」
+            </p>
+            <p className="font-bold">Michael Ferraro の補足：</p>
+            <p>
+              「編集者・出版社には、出版データの真実性・信頼性を保証する<strong>法的義務はありません</strong>。直感的には明らかに問題でも、<strong>科学の最善の利益のために行動する以外、編集者に明確な動機（法的なものを含む）が存在しない</strong>のです。これは大きな問題です。」
+            </p>
+          </div>
+        </div>
+
+        {/* Q3 */}
+        <div className="mb-6 border-l-4 border-indigo-400 pl-4">
+          <p className="font-bold text-indigo-900 mb-2">
+            Q3（Dr. Ron Schaeffer）：データの「誤解釈」が再出版されていく問題
+          </p>
+          <p className="text-sm text-gray-700 mb-2 italic">
+            「Rick Harold の質問への follow-up。ポルテノイ＆フォーリーの 1% 説の元の研究自体が誤解釈の例。椎体形成術（vertebroplasty）、最近のアセトアミノフェンも同様にデータが誤解釈されて再出版される。著者自身が誤解釈に乗り込む（インセンティブ付きで）状況についてのコメントは？」
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm text-gray-700">
+            <p className="font-bold">Neil O'Connell の回答：</p>
+            <p>
+              「データ誤解釈には 2 つの理由があり得ます ── <strong>素朴さ（naïveté）</strong>と<strong>動機づけ（motivation）</strong>です。具体例で名指しは避けますが、<strong>科学・医科学・健康科学は不完全な人間が行う営み</strong>で、威信・名声・収入によって強くインセンティブ化され、超競争的（hyper-competitive）です。データから生まれるナラティブを誘導しようとする巨大な利害が働いています。だから、データの選択的解釈・誤解釈の問題が存在することは <strong>まったく驚くべきことではない</strong>のです。」
+            </p>
+            <p>
+              「もう一つの課題は <strong>査読がそのフィルターとしてあまり優秀でない</strong>こと。査読は『最悪ではない』仕組みかもしれませんが、失敗するし、品質はばらつきがある。だから誤解釈はほぼ不可避で、<strong>見つけた人が呼びかける（call it out）責任</strong>を全員が持っています。」
+            </p>
+            <p>
+              「もし<strong>金銭以外も含めた、より完全で透明な COI 開示</strong>があれば、なぜ人々がそうした行動を取るのかをもっと理解できるでしょう。最終的には『なぜ我々は研究するのか』という問題に行き着きます。誰もが『知識を進歩させ、痛みのある人々のケアを改善するため』と主張するでしょうが、正直に言えば、研究は<strong>我々自身に利益をもたらす</strong>からも行うのです。さまざまな利益の形があり、それを日常的に防ぐには、人間離れした残酷なほどの自己への正直さが必要です。」
+            </p>
+            <p className="font-bold">Michael Ferraro の補足：</p>
+            <p>
+              「2 つの問題があります。<strong>(1) 自分が行っていない研究を自分の利益に都合よく解釈する他者</strong>と、<strong>(2) 著者自身が結果を誤解釈し、データから正当化されない結論を導く</strong>ケース。後者は、<strong>真に egregious であれば訂正・撤回の余地があります</strong>。しかし、明確な不正・捏造でさえ訂正に苦労している現状で、<strong>不正確な解釈を訂正する仕事ははるかに大きい</strong>ということです。」
+            </p>
+          </div>
+        </div>
+
+        {/* Q4 */}
+        <div className="mb-6 border-l-4 border-indigo-400 pl-4">
+          <p className="font-bold text-indigo-900 mb-2">
+            Q4（司会 Dr. David Keith）：Editorial／Opinion／Perspective の位置づけは？
+          </p>
+          <p className="text-sm text-gray-700 mb-2 italic">
+            「多くのジャーナルは社説・意見記事・展望を出版している。これらは懸念にどう適合するのか。著者・編集者の保護は何か。これらが正当か個人的動機によるかをどう判断するか？」
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm text-gray-700">
+            <p className="font-bold">Neil O'Connell の回答：</p>
+            <p>
+              「まずは、<strong>何が研究で何が研究でないかを認識すること</strong>が重要です。コメンタリーやナラティブレビューは、研究というより <strong>『科学ジャーナリズム』に近い</strong>ものです。それを認識すれば、別の基準で評価できます。」
+            </p>
+            <p>
+              「<strong>プロセスを伴わない文書には『buyer beware』のラベルを貼るべき</strong>です。コメンタリーやナラティブレビュー（系統的検索やプロセスがないもの）を読むときは、批判的に読み、著者が誰で、その特定の視点が何で、何が彼らを動かしうるかを反映する責任があります。」
+            </p>
+            <p>
+              「これらを常に不信感で読めという話ではなく、<strong>『これは誰の声か』『どんな物語を語りたがっているのか』を現実的に見つめる</strong>ことが大事です。<strong>データやプロセスのない意見記事は、たとえ非常に尊敬される高名な人物が書いていても、所詮は意見記事であり、エビデンス的ではない</strong>のです。」
+            </p>
+            <p className="font-bold">Michael Ferraro の補足：</p>
+            <p>
+              「Richard Smith の言葉のように、<strong>記事が信頼できると確信する必要があり、確信できなければ意見として扱うべき</strong>です。大手ジャーナルの一部は意見・教育記事の COI 規定を厳しくしており、潜在的 COI を緩和していますが、Neil の言う通り、それらは<strong>イデオロギー的な COI を含めた全ての潜在的 COI を完全に反映するものではない</strong>のです。」
+            </p>
+          </div>
+        </div>
+
+        {/* Q5 */}
+        <div className="mb-2 border-l-4 border-indigo-400 pl-4">
+          <p className="font-bold text-indigo-900 mb-2">
+            Q5（Dr. Lenny Cabin）：若手の盗用・出典不明文化をどう教育するか？
+          </p>
+          <p className="text-sm text-gray-700 mb-2 italic">
+            「若い人々はインターネットを通じて膨大な資料・データにアクセスできる。学会発表で出典のない画像・グラフを示す若手が多い。『どこで手に入れたの？』と尋ねると『友人が見せてくれて、その友人がさらに別の友人から…』と源流不明。彼らをどう正しい方法に導けばよいか？」
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3 text-sm text-gray-700">
+            <p className="font-bold">Neil O'Connell の回答：</p>
+            <p>
+              「私個人ではそれほど経験していませんが、AI の時代になり、Brunel での教育現場では、<strong>学生が小論文・学位論文・研究計画書の作成にどれほど関わったのか信じられない</strong>ような状況が見られます。だから今が問題なら、これからもっと悪くなるでしょう。」
+            </p>
+            <p>
+              「これらは<strong>科学の基本</strong>です ── データを示せ、計算過程を示せ、出典を引用せよ、すべてを承認せよ。だから<strong>学部・大学院教育に大きな責任</strong>があります。すべての若手研究者の<strong>研究誠実性教育（Research Integrity Training）</strong>の<strong>根本的な部分</strong>であるべきで、他者と研究する全ての研究者には<strong>悪しき実践を発見し、呼びかけ、それが許容されないと理解させる義務</strong>があります。」
+            </p>
+            <p>
+              「<strong>帰属なしに他者の業績を取ること（taking any work without attribution）は、学術実践の根本的犯罪</strong>です。これが日常的に起きていることに少し茫然としていますが、信じます。確かにそうなのでしょう。」
+            </p>
+            <p className="font-bold">Michael Ferraro の補足：</p>
+            <p>
+              「追加することは特にありません（Nothing else to add.）」
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm text-gray-600 mt-4 italic">
+          ── セッション終了は 9:00。Dr. Keith から「魅力的な発表に感謝」「次週は Dr. Jason Young による <strong>鎌状赤血球症と疼痛</strong>の講演」とのアナウンスでクローズ。
+        </p>
+      </section>
+
+      {/* テイクホーム */}
+      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-8">
+        <h4 className="font-bold text-indigo-900 mb-2">本講演のテイクホーム・メッセージ</h4>
+        <ol className="list-decimal pl-5 space-y-1 text-sm text-indigo-900">
+          <li>論文撤回は「<strong>著者を罰するもの</strong>」ではなく「<strong>文献を訂正するもの</strong>」</li>
+          <li>疼痛分野では 36 年で <strong>389 件</strong>撤回。66% が不正由来（過小評価の可能性大）</li>
+          <li>撤回後も文献を汚染し続ける ── <strong>SR / GL の 43% は撤回後に出版</strong>、20% は結論が変わる</li>
+          <li>撤回ラベリングはICMJE 基準で 50% 未満しか満たされていない</li>
+          <li>著者は ICMJE により撤回論文を引用しないことを義務付けられている ── <strong>Zotero / EndNote × Retraction Watch 連携</strong>を活用</li>
+          <li>Paper mill × AI で<strong>がん研究の約 10%</strong>がフラグ ── 「我々のエビデンスの海はプラスチック汚染されている」</li>
+          <li>enTRUST-PE は <strong>Integrity & Governance を中核</strong>に、Equity・PPIE・Methodological Rigour・Openness・Balanced Communication・Vigilance を価値とするフレームワーク</li>
+          <li>15 の疼痛・麻酔ジャーナル編集者が「<strong>Editorial Commitment to Trust and Integrity in Pain Science</strong>」を共同発表</li>
+          <li>Q&A の核心 ── <strong>「画像偽造は炭鉱のカナリア」</strong>、<strong>「意見記事は所詮意見記事、エビデンスではない」</strong>、<strong>「帰属なき引用は学術の根本犯罪」</strong></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+);
+
 const TAB_DEFS = [
   { id: 'famous', title: '有名な先生の講義より', content: famousLectureContent },
   { id: 'clark', title: 'Glenn Clark, DDS：Case Studies and Literature Reviews in Orofacial Pain and Headache', content: clarkContent },
   { id: 'pasternak', title: 'Amy Pasternak, PharmD：Pharmacogenetics of Orofacial Pain', content: <PasternakContent /> },
   { id: 'muraoka-2026-04', title: '2026年4月の慶應OFPオープンセミナー：村岡渡先生', content: muraokaContent },
+  { id: 'retractions-2026-04-29', title: '20260429Retracted Publications in Pain Medicine', content: retractionsContent },
 ];
 
 function TabContainer() {
