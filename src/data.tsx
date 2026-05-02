@@ -29,6 +29,7 @@ import { pathophysiologyChapter } from './data/pathophysiology';
 import { treatmentMechanismChapter } from './data/treatmentMechanism';
 import { expertDiscussionChapter } from './data/expertDiscussion';
 import { expertLecturesChapter } from './data/expertLectures';
+import { expertSummaryChapter } from './data/expertSummary';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -924,6 +925,7 @@ export const chapters: Chapter[] = [
       }
     ]
   },
+  expertSummaryChapter,
   {
     id: 'chapter-reserved-room',
     title: '予備室（パスワード）',
