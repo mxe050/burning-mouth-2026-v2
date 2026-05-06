@@ -17,7 +17,7 @@ export const expertSummaryChapter: Chapter = {
           </p>
           <p className="text-sm text-amber-900 bg-white/70 p-4 rounded border border-amber-200 leading-relaxed">
             以下では、「予備室（パスワード）」に収載した
-            <strong>専門家会議</strong>と<strong>5つの講義（有名な先生／Glenn Clark／Amy Pasternak／村岡渡／論文撤回セミナー）</strong>を横断的に整理し、
+            <strong>専門家会議</strong>と<strong>5つの講義（有名な日本の先生講演など／海外のセミナー）</strong>を横断的に整理し、
             <strong>「BMS（舌痛症）と口腔顔面痛をどう理解し、どう診断し、どう治療戦略を立てるか」</strong>という一本の流れに再構成しました。
             医学的には教育目的の整理であり、個別患者への診断・処方指示ではありません。
           </p>
