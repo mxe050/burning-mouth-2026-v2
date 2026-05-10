@@ -295,6 +295,523 @@ export const definitionChapter: Chapter = {
       )
     },
     {
+      id: "definition-peripheral-central",
+      title: "末梢型と中枢型に分類（Jääskeläinen 2017 PAIN 徹底解説）",
+      icon: <Microscope className="w-5 h-5" />,
+      content: (
+        <div className="space-y-6 text-gray-700 leading-relaxed">
+          {/* 出典 */}
+          <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg text-sm">
+            <p>
+              <strong>出典：</strong>Jääskeläinen SK. <em>Is burning mouth syndrome a neuropathic pain condition?</em> PAIN 2017; <strong>NeuPSIG（IASP神経障害性疼痛特別興味グループ）第6回国際会議レビュー論文</strong>。
+              本節では、原著4ページのほぼ全文を、特に<strong>末梢神経系の関与</strong>については一文も省かずに日本語化し、
+              さらに各根拠論文をWeb検索でサマリーします。
+            </p>
+          </div>
+
+          {/* 0. アブストラクト */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">0. 論文アブストラクト（全訳）</h3>
+            <p className="text-sm">
+              原発性バーニングマウス症候群（BMS）は、IHS 2013において
+              「<strong>口腔内の灼熱感または異常感覚が、毎日…3か月以上持続し、臨床的に明らかな原因病変を伴わない</strong>」状態と定義される。
+              痛みに加え、味覚異常（味覚障害、口腔乾燥）も高頻度にみられる。臨床的には神経障害の徴候を欠くが、
+              より精密な診断手法を用いると、神経軸の様々なレベルで神経障害性病変が認められる：
+              <strong>末梢小径線維障害</strong>（温度覚QST、電気味覚検査、上皮内神経線維密度）、
+              <strong>末梢または脳幹レベルでの三叉神経系病変</strong>（脳幹反射記録、三叉神経電気生理検査、誘発電位）、
+              <strong>中枢神経系における抑制の低下</strong>（脳幹反射の慣れ消失、QSTにおける陽性徴候、神経伝達物質PETによる線条体ドパミン機能不全所見）。
+              電気味覚検査の異常は、体性感覚小径線維に加え<strong>小径Aδ味覚求心線維</strong>の関与を示す。
+              これらの所見から、BMSは<strong>末梢性または中枢性神経障害性疼痛の2つの主要サブタイプ</strong>に分類でき、両者は個々の患者で重複しうる。
+              <strong>中枢型</strong>は局所治療に反応せず、しばしば<strong>精神医学的併存症（うつ・不安）</strong>を伴う。
+              一方、<strong>末梢型</strong>は<strong>末梢リドカインブロックや局所クロナゼパムに反応</strong>する。
+              BMSは<strong>閉経後女性に最も多く</strong>、これは「閉経による神経保護的性腺ホルモンの減少とストレスホルモンの上昇という背景下で、
+              脆弱な小径線維と基底核を侵す神経毒性因子による神経系障害」という仮説に至っている。
+            </p>
+          </section>
+
+          {/* 1. 序論 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">1. 序論（全訳）</h3>
+            <ul className="list-disc pl-6 text-sm space-y-2">
+              <li>
+                IHS最新分類において、BMSは「<strong>有痛性脳神経障害</strong>」の見出しの下に分類され、
+                「<strong>口腔内の灼熱感または異常感覚が、1日2時間以上、3か月を超えて反復し、臨床的に明らかな原因病変を伴わない</strong>」と定義される。
+              </li>
+              <li>
+                痛みは中等度から重度で歯痛と同程度の強さだが、<strong>表在性で灼熱性の独特な性質</strong>を持ち、
+                しばしば<strong>味覚異常と口腔乾燥</strong>（患者の50–70%）を伴う。<strong>舌尖が最も多く侵される</strong>が、口腔粘膜のいかなる部位も罹患しうる。
+              </li>
+              <li>
+                BMSの集団有病率は0.01%から40%まで大きく幅があるが、現行診断基準を用いた最近の良好な対照研究では<strong>1%未満〜3.7%</strong>と推定される。
+                有病率は<strong>閉経後女性で最も高く18%</strong>、女性対男性の比は<strong>3:1〜20:1</strong>の範囲。
+                多くの患者は<strong>夜間の改善</strong>を訴える――痛みは睡眠を妨げず、朝は軽く、日中悪化する。
+              </li>
+              <li>
+                定義上、臨床検査および量的測定を伴わない感覚診察は正常であり、したがってBMSは
+                <strong>「体性感覚系の損傷または疾患の直接的結果として生じ、神経解剖学的に妥当な分布の症状と徴候を伴う」</strong>
+                というIASPの神経障害性疼痛の定義には適合しないように見える。つまり、
+                <strong>IHSがBMSを有痛性脳神経障害に分類することと、IASPの神経障害性疼痛の定義との間には乖離</strong>が存在する。
+              </li>
+              <li>
+                それにもかかわらず、過去20年間にBMSに対して厳密な臨床診断基準と、臨床神経生理学・心理物理学・神経病理学・機能的脳画像という洗練された手法を用いて行われた研究は、
+                <strong>大多数の患者で神経軸の様々なレベルにおける神経障害性関与</strong>を明らかにしてきた。
+              </li>
+            </ul>
+          </section>
+
+          {/* 2.1 末梢神経系（最重要・全訳） */}
+          <section className="bg-rose-50/40 p-5 rounded-xl shadow-sm border-2 border-rose-200">
+            <h3 className="text-lg font-bold text-rose-900 border-b-2 border-rose-200 pb-2 mb-3">
+              2-1. BMSにおける末梢神経系（原著ほぼ全文翻訳）
+            </h3>
+            <div className="space-y-3 text-sm">
+              <p>
+                <strong>① 脳幹反射と亜臨床三叉神経障害（約20%）</strong><br/>
+                大径有髄Aβ求心線維を介する<strong>脳幹反射記録</strong>では、臨床的に典型的な原発性BMS患者の<strong>約20%</strong>に
+                三叉神経本幹あるいはその脳幹回路の障害徴候が認められた。この亜群のBMSは、
+                <strong>明確な臨床徴候を伴わない亜臨床的な三叉神経神経障害性疼痛</strong>を表しており、
+                これは特に神経損傷後慢性期における臨床感覚診察の感度の低さと整合する。
+              </p>
+              <p>
+                <strong>② 温度覚QSTと舌粘膜生検</strong><br/>
+                温度覚QSTと舌粘膜生検は、BMSの末梢神経系関与をさらに明らかにした。
+                BMS患者の<strong>大多数（76%）</strong>は温度覚QSTで<strong>低感覚（hypoesthesia）</strong>を示し、
+                特に<strong>無害な冷却刺激と温刺激に対して</strong>、また程度は軽いが<strong>痛覚低下（hypoalgesia）</strong>を示す。
+                BMS患者のQSTプロファイルは、多様な神経障害性疼痛疾患の大規模コホートで報告されたものに非常に類似する。
+              </p>
+              <p>
+                <strong>③ 機能喪失徴候は舌上皮小径線維の局所障害による</strong><br/>
+                BMS患者の温度覚QSTにおけるこれらの<strong>機能喪失徴候は、その後、舌上皮の小径神経線維の局所的障害</strong>に起因することが示された。
+                個々の患者では、<strong>大径線維と小径線維の病変が重複</strong>することがある。
+              </p>
+              <p>
+                <strong>④ 電気味覚検査とAδ味覚求心線維</strong><br/>
+                さらに、<strong>電気味覚検査の異常</strong>は、原発性BMSの病態生理過程に<strong>小径Aδ味覚求心線維</strong>も関与することを示唆し、
+                これらの患者で味覚異常が高頻度にみられる説明となる。
+              </p>
+              <p>
+                <strong>⑤ Aδ冷線維障害の優位 ── 「脱抑制」仮説</strong><br/>
+                興味深いことに、BMSでは<strong>Aδ冷求心線維がC線維よりもしばしば強く障害</strong>されており、
+                これは<strong>中枢神経系への小径線維入力の不均衡</strong>を示す。
+                正常状態において、<strong>Aδ冷線維は多型C侵害受容線維のシグナル伝達に対して持続的な抑制（tonic inhibition）</strong>を発揮しているため、
+                C線維機能を相対的に保ったまま<strong>Aδ線維系がより強く障害</strong>されると、<strong>系の脱抑制（disinhibition / unmasking）</strong>により
+                BMSにおいて中枢痛と同様に<strong>持続的な灼熱痛が生じうる</strong>。
+              </p>
+              <p>
+                <strong>⑥ 機能獲得徴候（gain-of-function）</strong><br/>
+                温度モダリティの機能喪失に加え、QSTは少数のBMS患者において<strong>機能獲得徴候</strong>を示した――
+                <strong>熱痛耐性低下、または熱痛覚過敏とアロディニア</strong>の形で。
+                同様に、脳幹反射記録は<strong>約1/3の患者で瞬目反射R2成分の慣れの欠如という形で三叉神経脳幹複合体の脱抑制</strong>を客観的に示した。
+              </p>
+              <p>
+                <strong>⑦ 黒質線条体ドパミン制御へのリンク</strong><br/>
+                瞬目反射の慣れは<strong>下行性黒質線条体ドパミン作動性制御下にある</strong>ため、
+                BMSにおける中枢ドパミン系の病態を明らかにするために<strong>神経伝達物質PET研究</strong>が実施された。
+                これらは「<strong>線条体ドパミンによる下行性抑制の欠陥が口腔顔面神経障害性疼痛の主要トリガー</strong>」という仮説を検証することを目的とした。
+                その結果と、原発性BMSにおける中枢神経系（CNS）関与の他の収斂証拠は、次節で扱う。
+              </p>
+            </div>
+
+            {/* 末梢サマリー視覚化 */}
+            <div className="mt-5 bg-white border border-rose-300 p-4 rounded-lg">
+              <h4 className="font-bold text-rose-900 mb-2">末梢関与の所見まとめ（数値・検査別）</h4>
+              <div className="overflow-x-auto">
+                <table className="text-xs w-full border border-gray-300">
+                  <thead className="bg-rose-100">
+                    <tr>
+                      <th className="border px-2 py-1">検査</th>
+                      <th className="border px-2 py-1">所見</th>
+                      <th className="border px-2 py-1">陽性率</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td className="border px-2 py-1">脳幹反射（Aβ）</td><td className="border px-2 py-1">三叉神経/脳幹回路の障害徴候</td><td className="border px-2 py-1 text-rose-700 font-bold">約20%</td></tr>
+                    <tr><td className="border px-2 py-1">温度覚QST</td><td className="border px-2 py-1">冷温の低感覚（機能喪失）</td><td className="border px-2 py-1 text-rose-700 font-bold">76%</td></tr>
+                    <tr><td className="border px-2 py-1">瞬目反射R2慣れ</td><td className="border px-2 py-1">慣れの欠如（脱抑制）</td><td className="border px-2 py-1 text-rose-700 font-bold">約1/3</td></tr>
+                    <tr><td className="border px-2 py-1">QST機能獲得</td><td className="border px-2 py-1">熱痛覚過敏／アロディニア</td><td className="border px-2 py-1">少数</td></tr>
+                    <tr><td className="border px-2 py-1">舌粘膜生検</td><td className="border px-2 py-1">上皮内小径線維密度↓</td><td className="border px-2 py-1">大多数</td></tr>
+                    <tr><td className="border px-2 py-1">電気味覚検査</td><td className="border px-2 py-1">Aδ味覚求心線維障害</td><td className="border px-2 py-1">高頻度</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          {/* 2.2 中枢神経系 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">
+              2-2. BMSにおける中枢神経系
+            </h3>
+            <ul className="list-disc pl-6 text-sm space-y-2">
+              <li>
+                BMS患者は健常対照に比べ、<strong>fMRIで熱痛刺激への両側視床の容積活性化が低下</strong>。
+                これは体性感覚路の脱求心化による他の神経障害性疼痛の所見と類似する。
+              </li>
+              <li>
+                線条体ドパミン系の<strong>fluoro-DOPA / ¹¹C-raclopride PET</strong>研究は、
+                BMS患者において対照と比べ<strong>シナプスドパミン濃度の低下</strong>を示す。
+                所見は<strong>早期パーキンソン病に類似</strong>しており、PDでは中枢型神経障害性疼痛がしばしばみられ、BMSの発症率も一般集団より高いとされる。
+              </li>
+              <li>
+                神経生理学・神経伝達物質PET所見は、<strong>基底核、特に脳ドパミン作動性ネットワークが臨床痛みの処理と修飾に重要な役割</strong>を果たすことの
+                <strong>ヒトにおける初の直接的証拠</strong>を提供した。動物実験でも<strong>黒質線条体DA経路の障害が三叉神経領域のアロディニアを誘導</strong>することが示されている。
+              </li>
+              <li>
+                ドパミンD2受容体（DRD2）の<strong>957C&gt;T一塩基多型</strong>はBMSを含む口腔顔面神経障害性疼痛のリスクと症状重症度に関連する。
+                線条体シナプスドパミン低下と関連する<strong>957 TTホモ接合体は、BMS患者で50%、一般集団で27%</strong>と増加し、
+                この遺伝型を持つ患者は<strong>NRSで最も高い疼痛強度</strong>を報告した。
+              </li>
+              <li>
+                <strong>末梢リドカインブロック（舌神経）</strong>はBMS患者を2亜群に分類できる：
+                <strong>末梢亜群</strong>は良好な鎮痛反応を示すのに対し、<strong>中枢亜群</strong>は無反応または<strong>痛覚過敏</strong>を示す。
+                この簡易手技は<strong>局所クロナゼパム治療への反応をも予測</strong>し、効果は末梢亜群でのみ認められた。
+                さらに中枢亜群は<strong>不安・抑うつスコアが高い</strong>。
+              </li>
+              <li>
+                BMSの精神医学的併存は二次的・非特異的とされてきたが、構造化精神医学面接を用いた研究では
+                <strong>BMS患者は脳ドパミントーンの低下に起因する精神疾患のみに罹患</strong>する傾向があり、
+                <strong>大うつ病・社会恐怖が55%、C型（恐怖性／神経質）人格が16%</strong>に認められた。
+                内在的または誘発された<strong>脳ドパミン系の脆弱性が、慢性神経障害性疼痛と精神疾患併存への共通経路</strong>を提供しうる。
+              </li>
+              <li>
+                ドパミン仮説は<strong>反復経頭蓋磁気刺激（rTMS）研究</strong>からも支持される。
+                rTMSは線条体でドパミン放出を初期に誘発し、<strong>内因性オピオイド系を活性化</strong>することにより<strong>BMS痛を効果的に緩和</strong>する。
+              </li>
+            </ul>
+          </section>
+
+          {/* 3. 考察 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">3. 考察（要約全訳）</h3>
+            <div className="space-y-3 text-sm">
+              <p>
+                上皮神経線維から脳に至る神経路を網羅する複数の研究ラインからの収斂証拠は、
+                臨床的に典型的なBMSが<strong>大多数の症例で慢性神経障害性疼痛</strong>であり、
+                <strong>末梢型と中枢型の2主要亜群</strong>からなることを示す。これらは<strong>亜臨床的</strong>であり、明らかな臨床徴候を示さないため、
+                神経生理学・心理物理学・神経病理学的検査によってのみ正確に同定・分類できる。
+                舌神経リドカインブロックも分類補助となるが、神経生理・心理物理・神経病理学的所見との対比検証が必要。
+              </p>
+              <p>
+                <strong>第1のBMS亜群＝末梢型</strong>は、より広範だが亜臨床的な三叉神経神経障害／三叉脳幹病変、または<strong>純粋な口腔粘膜小径線維神経障害</strong>に起因し、
+                確認検査で機能喪失徴候を示す。BMSの局所小径線維型は<strong>長さ非依存性小径線維神経障害（NLDSFN）</strong>の枠組みにも適合し、これは女性に多く、顔・体幹などへの斑状分布を示す。
+              </p>
+              <p>
+                <strong>第2の亜群＝中枢型</strong>は、神経生理・神経伝達物質PETで<strong>脳ドパミントーン低下</strong>と精神疾患併存の増加を示し、QSTで機能獲得徴候を伴うこともある。
+                個々の患者では末梢型と中枢型は機能喪失・獲得徴候の様々な組み合わせで重複しうる。
+              </p>
+              <p>
+                精神疾患併存のプロファイルは、BMS患者の<strong>線条体ドパミントーン低下</strong>のPET所見と整合的である。
+                内因性ドパミン-オピオイド軸と基底核回路を介した<strong>下行性抑制の弱さ</strong>が、うつ・不安・C型人格、そして慢性神経障害性疼痛への共通の脆弱性を表しうる。
+                したがって神経障害性疼痛とうつは互いに因果関係にあるのではなく、<strong>低脳ドパミントーンという共通素因（遺伝性または獲得性）から生じる</strong>と考えるべきである。
+              </p>
+              <p>
+                <strong>新たな統合仮説</strong>：BMSの4つの主要特徴――(1)閉経後女性の優位／(2)精神医学的併存／(3)口腔症状／(4)末梢・中枢の確認検査異常――を踏まえると、
+                慢性不安・抑うつによる副腎ステロイド変化、および/または閉経による性腺ホルモンの劇的変化が
+                <strong>神経保護ステロイド（例：DHEA）</strong>の有意な減少を招き、神経毒性因子の存在下で
+                <strong>DHEA依存性のAδ小径線維と黒質線条体DA神経の選択的障害</strong>を惹起、
+                これが遺伝的に弱いDA-オピオイド軸下行性抑制と組み合わさって、末梢／中枢／混合型の臨床BMS表現型を生みうる。
+              </p>
+              <p>
+                さらに注目すべきは、神経生理検査で<strong>臨床的に典型的なBMSの約20%に亜臨床三叉神経系病変</strong>（亜臨床的舌神経・下歯槽神経損傷、脳幹病変など）が見られることである。
+                既存文献から、<strong>臨床感覚診察では神経障害性口腔顔面痛の診断・分類に不十分</strong>であることは明らかである。
+                神経解剖学的に妥当な臨床徴候を必須とする現行のIASP神経障害性疼痛の定義は<strong>亜臨床的神経障害性疼痛を認識せず、
+                確認検査の結果のみでは神経障害性の証拠と認めない</strong>点で不適切と論じうる。
+                症状から神経生理・心理物理・神経病理・機能的脳画像所見への「ショートカット」を許容することで、
+                BMSのような疾患でも確定診断が可能になる。
+                これらを踏まえると、IHSが<strong>BMSを有痛性脳神経障害に分類することは最も適切</strong>と思われる。
+              </p>
+              <p>
+                BMSの2亜群（末梢／中枢）の正しい診断・分類は、<strong>個々の患者レベルで最適治療を導く</strong>ため重要である：
+                末梢型は<strong>クロナゼパムやカプサイシンの局所治療</strong>から利益を得うる一方、
+                中枢型は<strong>rTMSやドパミン作動薬で内因性ドパミン-オピオイド下行性制御を増強する</strong>ことで最も緩和されうる。
+                純粋な小径線維神経障害の徴候があれば、治癒可能な小径線維神経障害の病因の系統的精査が必要である。
+              </p>
+            </div>
+          </section>
+
+          {/* 4. 末梢性の根拠論文Web検索サマリー */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border-2 border-rose-200">
+            <h3 className="text-lg font-bold text-rose-900 border-b-2 border-rose-200 pb-2 mb-3">
+              4. 末梢性の根拠となる主要論文（Web検索サマリー）
+            </h3>
+            <p className="text-sm mb-4">
+              Jääskeläinen 2017 が末梢神経系関与の根拠として引用した主要論文を、PubMed/ScienceDirect/Wileyで実検索のうえサマリー化しました。
+            </p>
+
+            <div className="space-y-4">
+              {/* Lauria 2005 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">① Lauria G et al. (2005) PAIN 115:332-7 — 舌粘膜生検で小径線維神経障害を初めて証明</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>ミラノ・国立神経学研究所Carlo BestaのLauriaらが、6か月以上のBMS患者<strong>12名</strong>と健常対照<strong>9名</strong>から舌側方の表在生検を採取。</li>
+                  <li>免疫組織化学・共焦点顕微鏡で多種マーカーを共局在解析、<strong>上皮内神経線維密度（IENFD）を定量</strong>。</li>
+                  <li><strong>BMS患者の上皮内神経線維密度は対照より有意に低く、症状持続期間と相関傾向</strong>。上皮および乳頭下神経線維は<strong>軸索変性を反映するびまん性形態変化</strong>を呈した。</li>
+                  <li>結論：<strong>BMSは三叉神経小径線維感覚神経障害が原因</strong>であり、舌の表在生検は診断補助となる。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  この論文はBMSが「気のせい」ではなく<strong>組織学的に証明可能な神経障害</strong>であることを最初に示したランドマーク研究。
+                </p>
+              </div>
+
+              {/* Yilmaz 2007 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">② Yilmaz Z et al. (2007) J Clin Neurosci 14:864-71 — TRPV1とNGFの増加が疼痛スコアと相関</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>BMS患者<strong>10名</strong>と対照<strong>10名</strong>の舌生検を、<strong>TRPV1（カプサイシン受容体・熱受容体）／NGF（神経成長因子）／神経マーカー（neurofilament, peripherin）</strong>で免疫染色。</li>
+                  <li>BMSでは<strong>上皮を貫通する神経線維が減少（小径線維神経障害を示唆）</strong>。</li>
+                  <li>一方、<strong>TRPV1陽性線維とNGF陽性線維は有意に増加</strong>、基底上皮細胞のNGF染色も増加。</li>
+                  <li><strong>ベースライン疼痛スコアとTRPV1／NGF線維数に有意な相関</strong>。</li>
+                  <li>結論：<strong>選択的TRPV1／NGFブロッカーがBMSの新規治療となりうる</strong>。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  「線維数は減るのに、残存線維のTRPV1発現は増える」という一見矛盾した所見が、<strong>残存線維の過敏化（peripheral sensitization）</strong>を直接的に示した重要研究。
+                </p>
+              </div>
+
+              {/* Beneng 2010 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">③ Beneng K et al. (2010) Int J Oral Maxillofac Surg 39:815-9 — P2X3受容体の上昇</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>BMS患者<strong>9名</strong>（IASP基準）と智歯抜歯対照<strong>10名</strong>の舌粘膜で、<strong>ATP感受性のP2X3プリン受容体</strong>免疫反応性を初評価。</li>
+                  <li><strong>P2X3陽性線維はBMSで有意に増加</strong>（平均%面積：対照0.96±0.30 vs BMS 2.51±0.61, p=0.024）。</li>
+                  <li>一方、<strong>neurofilament染色線維はBMSで減少</strong>。両者の比をとるとP2X3線維の増加傾向。</li>
+                  <li>結論：<strong>三叉神経感覚系のP2X3亢進がBMS症状に寄与</strong>、P2X3はBMS・三叉神経障害性疼痛の治療標的となりうる。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  TRPV1に加え<strong>P2X3も末梢過敏化メディエーター</strong>として働くことを示し、BMSの末梢性メカニズムの分子的多様性を支持。
+                </p>
+              </div>
+
+              {/* Grémeau-Richard 2010 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">④ Grémeau-Richard C et al. (2010) PAIN 149:27-32 — リドカイン舌神経ブロックで末梢／中枢に分類</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li><strong>無作為化二重盲検クロスオーバー</strong>試験。注射前と注射15分後にVASで自発灼熱痛を測定。</li>
+                  <li><strong>末梢群（n=10）</strong>：リドカインでVAS −4.3±3.1 cm、生食 −0.9±0.3 cm（<strong>p=0.02</strong>）。<strong>明確な鎮痛反応</strong>。</li>
+                  <li><strong>中枢群（n=7）</strong>：リドカインで疼痛<strong>増悪（−0.8±2.6 cm、つまり悪化方向）</strong>、生食で −1.5±3.0 cm（p=0.15）。</li>
+                  <li><strong>局所クロナゼパムは末梢群でより有効傾向（p=0.07）、HADスコアも末梢群で低い（p&lt;0.03）</strong>。</li>
+                  <li>結論：BMSの神経障害性病態は<strong>個々で末梢性／中枢性／混合型</strong>であり、<strong>局所クロナゼパムとHADはサブタイプの指標</strong>になりうる。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  本論文は<strong>「末梢／中枢の臨床的サブタイプ分類」のエビデンス上の柱</strong>。Jääskeläinen 2017 の中核引用。
+                </p>
+              </div>
+
+              {/* Puhakka 2016 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">⑤ Puhakka A et al. (2016) Oral Dis 22:338-44 — IENFD低下を再確認、亜臨床全身性末梢神経障害の可能性</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>慎重に表現型化されたBMS患者<strong>10名</strong>と年齢・性別マッチ屍体対照<strong>19名</strong>（うち6名は生前糖尿病）の舌粘膜IENFDを比較。</li>
+                  <li>三叉神経系および四肢遠位末梢神経の徹底的な神経生理・心理物理学的検査を実施。</li>
+                  <li>BMS患者は非糖尿病対照に比し<strong>IENFDが有意に低下（0.27±0.18 mm⁻¹ vs 0.92±0.15 mm⁻¹, p=0.0253）</strong>。</li>
+                  <li>結論：<strong>口腔粘膜の純粋な局所小径線維神経障害が原発性BMS病態に役割</strong>を果たす。さらにBMSは<strong>より全身性で亜臨床的な末梢神経障害</strong>に関連する可能性。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  Lauria 2005の所見を独立した別グループ（フィンランド）が再現。<strong>外的妥当性</strong>を強化した研究。
+                </p>
+              </div>
+
+              {/* Forssell 2002 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">⑥ Forssell H et al. (2002) PAIN 99:41-7 — 「BMS患者の76%にQST異常」の根拠論文</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li><strong>BMS患者52名</strong>に対しQSTと瞬目反射（BR）を施行。</li>
+                  <li>電気生理所見からBMSは4カテゴリーに分類でき、<strong>10名（19%）に脳幹病変または末梢三叉神経障害を示唆するBR異常</strong>を認めた。</li>
+                  <li><strong>約90%</strong>のBMS患者で何らかの感覚閾値・BR反応の異常が検出された。</li>
+                  <li>結論：BMSは「症状のみ」の機能性疾患ではなく、<strong>大多数で電気生理学的に客観的な感覚機能障害</strong>を伴う。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  Jääskeläinen 2017 が引用する「<strong>76%が温度覚QSTで低感覚</strong>」の数値はこの論文に由来。
+                </p>
+              </div>
+
+              {/* Eliav 2007 */}
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h4 className="font-bold text-rose-900 mb-1">⑦ Eliav E et al. (2007) JADA 138:628-33 — 鼓索神経機能不全を電気味覚検査で証明</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>電気味覚閾値は<strong>鼓索神経機能</strong>を、電気的検出/しびれ閾値は<strong>三叉神経機能</strong>を反映するという原理に基づく。</li>
+                  <li>BMS患者では電気味覚/しびれ検出比と味覚検出閾値が二次性BMS・対照より有意に高く、<strong>22名中18名（82%）に鼓索神経機能不全</strong>（13名片側性／5名両側性）。</li>
+                  <li>結論：<strong>鼓索神経機能低下がBMS病態に重要な役割</strong>を果たし、片側性機能低下でも全般的灼熱感を生じうる。</li>
+                </ul>
+                <p className="text-xs mt-2 text-rose-800">
+                  Aδ味覚求心線維障害という「<strong>味覚異常を神経障害として説明</strong>」した代表的研究。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 5. Guyatt先生シミュレーション */}
+          <section className="bg-slate-50 p-5 rounded-xl border-2 border-slate-300 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900 border-b-2 border-slate-300 pb-2 mb-3">
+              5. G先生（Guyatt）シミュレーションによる批判的吟味
+            </h3>
+            <p className="text-xs text-slate-600 italic mb-3">
+              ※ EBM/GRADE学派（McMaster大学・Guyatt教授）の方法論を踏まえた批判的吟味の<strong>シミュレーション</strong>。本人の見解ではない。
+            </p>
+
+            <div className="space-y-4 text-sm">
+              <div>
+                <h4 className="font-bold text-slate-800">5-1. 短い結論</h4>
+                <p>
+                  Guyatt学派の観点から述べる。Jääskeläinen 2017 は、原発性BMSが神経障害性疼痛であるかという問いに対し、末梢・中枢両方の神経系異常のエビデンスを包括的にまとめた
+                  <strong>ナラティブレビュー</strong>である。BMSという「所見のない」慢性疼痛にQST・神経生理・PET・舌粘膜生検という多角的所見を集約し、
+                  「末梢型」「中枢型」の枠組みを提示した点は<strong>病態理解と個別化治療の方向性として有意義</strong>である。
+                </p>
+                <p className="mt-2">
+                  しかしEBMの枠組みでは、(1)<strong>系統的レビューではなく検索戦略・risk of bias評価が明示されない</strong>、
+                  (2)引用研究の多くが<strong>著者自身のグループ</strong>、(3)個々は<strong>小規模横断・症例対照研究・症例集積</strong>で因果推論には限定的、
+                  (4)<strong>病態生理仮説の提示が中心で治療効果エビデンスは限定</strong>、(5)ドパミン仮説は<strong>仮説生成段階</strong>にとどまる、という明確な限界がある。
+                </p>
+                <p className="mt-2 font-medium">
+                  結論：<strong>BMSの病態理解を深めるナラティブレビューとして価値があるが、診断基準変更や治療選択を直接導くレベルのエビデンスは提供しない。仮説生成的論文として読むべき。</strong>
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-2. PICO/研究の問い</h4>
+                <div className="overflow-x-auto">
+                  <table className="text-xs w-full border border-slate-300 mt-2">
+                    <tbody>
+                      <tr><td className="border px-2 py-1 font-bold w-32">Population</td><td className="border px-2 py-1">原発性BMS患者（IHS 2013基準）</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">Question</td><td className="border px-2 py-1">BMSにおける神経障害性疼痛の病態生理学的エビデンスはあるか</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">Comparator</td><td className="border px-2 py-1">健常対照</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">Outcomes</td><td className="border px-2 py-1">QST／神経生理／IENFD／PET／リドカインブロック反応／精神医学的併存</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">Design</td><td className="border px-2 py-1">ナラティブレビュー（NeuPSIG第6回会議論文）</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">Setting</td><td className="border px-2 py-1">主にフィンランド・トゥルク大学グループ</td></tr>
+                      <tr><td className="border px-2 py-1 font-bold">COI</td><td className="border px-2 py-1">なしと報告</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs mt-2 text-slate-700">
+                  ※アウトカムはすべて<strong>病態生理・診断的指標（サロゲート）</strong>であり、患者重要アウトカム（疼痛軽減・QOL・機能・害）の治療研究のレビューではない。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-3. 著者の主張の3層分類</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs mt-2">
+                  <div className="bg-emerald-50 border border-emerald-200 p-3 rounded">
+                    <strong className="text-emerald-900">データから直接支持</strong>
+                    <ul className="list-disc pl-4 mt-1 space-y-1">
+                      <li>精密検査で大多数に末梢/中枢の神経障害性変化</li>
+                      <li>QSTで76%に温度覚低下</li>
+                      <li>リドカインブロックで末梢/中枢分類可</li>
+                      <li>線条体ドパミンレベル低下</li>
+                    </ul>
+                  </div>
+                  <div className="bg-amber-50 border border-amber-200 p-3 rounded">
+                    <strong className="text-amber-900">解釈として一歩踏み出した主張</strong>
+                    <ul className="list-disc pl-4 mt-1 space-y-1">
+                      <li>BMSは末梢/中枢2サブタイプの慢性神経障害性疼痛</li>
+                      <li>ドパミン系機能低下が疼痛と精神症状の共通基盤</li>
+                      <li>IASP定義を修正し確認検査のみで確定診断とする提案</li>
+                    </ul>
+                  </div>
+                  <div className="bg-rose-50 border border-rose-200 p-3 rounded">
+                    <strong className="text-rose-900">支持が不十分な主張</strong>
+                    <ul className="list-disc pl-4 mt-1 space-y-1">
+                      <li>閉経後ステロイド変化→神経保護能低下→小径線維損傷の包括仮説</li>
+                      <li>rTMS/ドパミン作動薬が中枢型BMSに有効という治療示唆</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-4. 妥当性の点検</h4>
+                <div className="overflow-x-auto">
+                  <table className="text-xs w-full border border-slate-300 mt-2">
+                    <thead className="bg-slate-200">
+                      <tr><th className="border px-2 py-1">項目</th><th className="border px-2 py-1">評価</th><th className="border px-2 py-1">深刻度</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td className="border px-2 py-1">検索の系統性</td><td className="border px-2 py-1">記載なし</td><td className="border px-2 py-1 text-rose-700">重要</td></tr>
+                      <tr><td className="border px-2 py-1">引用研究の独立性</td><td className="border px-2 py-1">著者グループへの依存度高</td><td className="border px-2 py-1 text-rose-700">重要</td></tr>
+                      <tr><td className="border px-2 py-1">個々の研究デザイン</td><td className="border px-2 py-1">小規模横断・症例対照</td><td className="border px-2 py-1 text-rose-700">重要</td></tr>
+                      <tr><td className="border px-2 py-1">アウトカムの患者重要性</td><td className="border px-2 py-1">サロゲート中心</td><td className="border px-2 py-1 text-rose-700">重要</td></tr>
+                      <tr><td className="border px-2 py-1">仮説の検証レベル</td><td className="border px-2 py-1">仮説生成中心</td><td className="border px-2 py-1 text-amber-700">軽〜重要</td></tr>
+                      <tr><td className="border px-2 py-1">COI</td><td className="border px-2 py-1">なし報告</td><td className="border px-2 py-1 text-emerald-700">大きな懸念なし</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-5. GRADEによる確実性評価（暫定）</h4>
+                <div className="overflow-x-auto">
+                  <table className="text-xs w-full border border-slate-300 mt-2">
+                    <thead className="bg-slate-200">
+                      <tr><th className="border px-2 py-1">主張</th><th className="border px-2 py-1">デザイン</th><th className="border px-2 py-1">確実性</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td className="border px-2 py-1">末梢小径線維異常がある</td><td className="border px-2 py-1">小規模横断・症例対照</td><td className="border px-2 py-1 text-amber-700 font-bold">Low</td></tr>
+                      <tr><td className="border px-2 py-1">線条体ドパミン低下</td><td className="border px-2 py-1">非常に小規模PET</td><td className="border px-2 py-1 text-rose-700 font-bold">Very low</td></tr>
+                      <tr><td className="border px-2 py-1">リドカインブロックでサブタイプ分類可</td><td className="border px-2 py-1">小規模RCT 1件</td><td className="border px-2 py-1 text-amber-700 font-bold">Low</td></tr>
+                      <tr><td className="border px-2 py-1">ドパミン共通基盤仮説</td><td className="border px-2 py-1">観察・遺伝・動物の複合</td><td className="border px-2 py-1 text-rose-700 font-bold">Very low</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-6. EtD（Evidence-to-Decision）の要点</h4>
+                <ul className="list-disc pl-5 text-xs space-y-1 mt-2">
+                  <li><strong>問題の重要性：</strong>BMSは慢性疼痛でQOLを大きく損なう。診断・分類改善は患者にとって重要</li>
+                  <li><strong>エビデンスの確実性：</strong>Low〜Very low</li>
+                  <li><strong>資源・費用：</strong>QST・PET・舌粘膜生検は高コスト、広く利用不可</li>
+                  <li><strong>公平性：</strong>高度検査へのアクセスは施設・地域間で大きく異なる</li>
+                  <li><strong>実行可能性：</strong>大多数の臨床現場でPET・詳細神経生理は利用困難</li>
+                  <li><strong>判断：</strong><strong>推奨を出す段階ではない</strong>。仮説生成的レビューとして有用</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-7. 言えること／言えないこと</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs mt-2">
+                  <div className="bg-emerald-50 border border-emerald-200 p-3 rounded">
+                    <strong className="text-emerald-900">言えること</strong>
+                    <ul className="list-disc pl-4 mt-1 space-y-1">
+                      <li>BMSの大多数に精密検査で末梢/中枢の神経系異常を認めうる（複数小規模研究）</li>
+                      <li>末梢型/中枢型の概念的枠組みには一定の根拠</li>
+                      <li>BMSをIASPの神経障害性疼痛枠組みで理解する試みは理論的に合理的</li>
+                    </ul>
+                  </div>
+                  <div className="bg-rose-50 border border-rose-200 p-3 rounded">
+                    <strong className="text-rose-900">言えないこと</strong>
+                    <ul className="list-disc pl-4 mt-1 space-y-1">
+                      <li>「BMSは神経障害性疼痛である」と確定はできない（Low〜Very low）</li>
+                      <li>ドパミン仮説が正しいと断定はできない</li>
+                      <li>末梢型クロナゼパム／中枢型rTMSを推奨に変換するのは時期尚早</li>
+                      <li>これらの検査を全BMS患者に行うべきかは判断不可</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-800">5-8. G先生ならどう表現するか（想定発言）</h4>
+                <blockquote className="border-l-4 border-slate-400 pl-4 italic text-sm bg-white p-3 rounded mt-2">
+                  「この論文は、BMSが神経障害性疼痛であるという仮説を支持するエビデンスを包括的に整理しており、その貢献は認められる。
+                  しかし、臨床家が知りたいのは、この分類が治療選択を改善し、患者にとって重要なアウトカム――疼痛の軽減、生活の質の向上――を変えるかどうかである。
+                  その問いに答えるためには、ナラティブレビューではなく系統的レビューが必要であり、サブタイプ別の治療効果を検証するRCTが必要である。
+                  現時点でこの論文は、病態理解を深め、今後の研究の方向性を示す<strong>仮説生成的な資料</strong>として最も適切に位置づけられる。
+                  完全でないことは無価値であることを意味しない――しかし、この段階のエビデンスから強い臨床的推奨を導くことは、
+                  エビデンスが支えられる範囲を超えている。」
+                </blockquote>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-3 rounded text-xs">
+                <strong>本シミュレーションの限界：</strong>
+                単一ナラティブレビュー論文のみに基づき原著の個別評価は行っていない。
+                BMS治療の系統的レビューや他のbody of evidenceとの照合は未実施。
+                G先生本人の見解ではなく、Guyatt/McMaster EBM/GRADE学派の方法論に基づくシミュレーション。
+              </div>
+            </div>
+          </section>
+        </div>
+      )
+    },
+    {
       id: "definition-summary",
       title: "分類と診断基準のまとめ",
       icon: <FileText className="w-5 h-5" />,
