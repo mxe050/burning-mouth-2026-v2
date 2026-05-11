@@ -841,6 +841,285 @@ export const definitionChapter: Chapter = {
           </p>
         </div>
       )
+    },
+    {
+      id: "definition-rdc-currie2020",
+      title: "BMS研究用診断基準（RDC/BMS）── Currie 2020 Delphi合意の徹底解説",
+      icon: <FileText className="w-5 h-5" />,
+      content: (
+        <div className="space-y-6 text-gray-700 leading-relaxed">
+          {/* 出典 */}
+          <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg text-sm">
+            <p>
+              <strong>出典：</strong>Currie CC, Ohrbach R, De Leeuw R, Forssell H, Imamura Y, Jääskeläinen SK, Koutris M, Nasri-Heir C, Tan H, Renton T, Svensson P, Durham J.
+              <em> Developing a Research Diagnostic Criteria for Burning Mouth Syndrome: Results from an International Delphi Process.</em>
+              <strong> J Oral Rehabil. 2020; doi:10.1111/joor.13123</strong>
+            </p>
+            <p className="mt-2 text-xs text-amber-900">
+              ※ 著者には Ohrbach（RDC/TMDの開発者）・Jääskeläinen（前項BMS神経障害性疼痛論文の著者）・今村佳樹（日本大学）・Svensson（オーフス大学）など、BMS研究の主要人物12名が結集。INfORM（International Network for Orofacial Pain and Related Disorders Methodology）が主催した6ラウンドのDelphi合意プロセスにより、ベータ版 <strong>RDC/BMS</strong> を策定。
+            </p>
+          </div>
+
+          {/* 1. 論文の背景と目的 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">1. 背景と目的</h3>
+            <ul className="list-disc pl-6 text-sm space-y-2">
+              <li>
+                BMSは集団の<strong>0.7〜18%</strong>に発症し、特に閉経後女性で頻発する。しかし<strong>BMSの定義そのものが研究ごとにバラバラ</strong>で、本来BMSではない患者が研究に組み入れられ、結果の再現性を著しく損なってきた。
+              </li>
+              <li>
+                顎関節症（TMD）では1992年に Dworkin らが <strong>RDC/TMD</strong> を発表し、その後20年間で何千もの再現可能な研究を生み出した実績がある。RDC/TMDは
+                <strong>(1) 生物心理社会モデル</strong>、<strong>(2) 疫学データ基盤</strong>、<strong>(3) 二軸分類（疾患＋人）</strong>、<strong>(4) 操作的基準と検査仕様の明確化</strong>、<strong>(5) 初版は不完全でも改訂前提</strong>──の5原則で構築された。
+              </li>
+              <li>
+                Currieらは「BMSの研究と臨床がカオスだった1980年代後半のTMDと同じ状況にある」と判断し、RDC/TMDをテンプレートとして <strong>BMS版RDC</strong> をDelphi合意で開発した。最終目標は<strong>「真のBMS患者のみが研究に組み入れられること」</strong>と<strong>「多施設で比較可能な高品質研究の実施」</strong>である。
+              </li>
+            </ul>
+          </section>
+
+          {/* 2. Delphiプロセスの方法 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">2. Delphiプロセスの方法</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div className="bg-indigo-50/60 border border-indigo-200 p-3 rounded">
+                <strong>参加者：</strong>BMS臨床経験8年以上の国際エキスパート12名（招待14名中2名辞退、第1著者除く全員が8年以上）
+              </div>
+              <div className="bg-indigo-50/60 border border-indigo-200 p-3 rounded">
+                <strong>ラウンド数：</strong>合計6ラウンド。Round 1は2017年San Francisco IADR年次総会で<strong>対面フォーカスグループ</strong>（7名対面＋5名遠隔）。Round 2〜6は<strong>メール往復</strong>で改訂を反復。
+              </div>
+              <div className="bg-indigo-50/60 border border-indigo-200 p-3 rounded">
+                <strong>議長：</strong>シニア著者 Durham（モデレーター）、第1著者 Currie は議事録のみで意思決定には不関与。
+              </div>
+              <div className="bg-indigo-50/60 border border-indigo-200 p-3 rounded">
+                <strong>合意ルール：</strong>すべてのコメント・改訂履歴を文書上で透明化。全員が合意し、それ以上の改訂提案が出なくなった時点（Round 6）でベータ版完成。
+              </div>
+            </div>
+          </section>
+
+          {/* 3. 合意されたBMS定義 */}
+          <section className="bg-emerald-50 p-5 rounded-xl shadow-sm border-2 border-emerald-300">
+            <h3 className="text-lg font-bold text-emerald-900 border-b-2 border-emerald-300 pb-2 mb-3">
+              3. 合意されたBMSの定義（ICOP 2020準拠）
+            </h3>
+            <div className="bg-white border-l-4 border-emerald-500 p-4 rounded">
+              <p className="text-sm font-medium leading-loose">
+                「<strong>An intraoral burning or dysaesthetic sensation, recurring daily for more than 2 hours per day over more than 3 months, without evident causative lesions on clinical examination and investigation.</strong>」<br/>
+                ＝「<strong>口腔内の灼熱感または異常感覚が、1日2時間以上、3か月を超えて連日反復し、臨床検査および各種精査において明らかな原因病変を認めないもの</strong>」
+              </p>
+            </div>
+            <ul className="list-disc pl-6 text-sm space-y-1 mt-3">
+              <li>痛みは<strong>灼熱性（burning quality）</strong>であり、<strong>口腔粘膜の表在性</strong>に感じられる必要がある。</li>
+              <li>「精査（investigation）」には<strong>臨床所見と検査所見の両方</strong>が含まれる。</li>
+              <li><strong>例外規定①：</strong>ICOPの粘膜痛障害（mucosal pain disorder）と分類された患者が、原因病変を治療した後も持続的な灼熱症状を訴える場合 → <strong>RDC/BMSで再分類可</strong>。</li>
+              <li><strong>例外規定②：</strong>灼熱症状が<strong>3か月未満</strong>でも、本RDCにより <strong>"Probable BMS"（疑いBMS）</strong> として運用可。</li>
+            </ul>
+          </section>
+
+          {/* 4. RDC/BMSの全体構造 */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">4. RDC/BMSの全体構造（2軸 ＋ 願望的バイオマーカー）</h3>
+            <p className="text-sm mb-3">RDC/TMDをテンプレートとし、<strong>3つのデータ収集ツール＋第4のバイオマーカー枠</strong>で構成される。</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <div className="bg-blue-50 border border-blue-200 p-4 rounded">
+                <h5 className="font-bold text-blue-900 mb-1">Part 1：症状自己報告（Symptom Self-Report）</h5>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>患者デモグラフィー</li>
+                  <li>症状の記述（<strong>SF-MPQ-2</strong>＋BMS特有語彙＋自由記述）</li>
+                  <li>症状部位（DC/TMD検証済み <strong>pain diagram</strong>＋舌専用図）</li>
+                  <li>発症時期（≥3か月の判定用）／持続時間（≥2時間/日の判定用）</li>
+                  <li>日内変動／増悪・寛解因子</li>
+                  <li>症状強度：<strong>GCPS v2（Graded Chronic Pain Scale）</strong></li>
+                  <li>味覚異常／口腔乾燥／飲食物・活動の影響</li>
+                  <li>原因となりうる疾患・薬剤の既往</li>
+                  <li><strong>1か月の毎日記録ダイアリー</strong>（&gt;2時間/日の確認）</li>
+                </ul>
+              </div>
+              <div className="bg-rose-50 border border-rose-200 p-4 rounded">
+                <h5 className="font-bold text-rose-900 mb-1">Part 2：診察（Examination）</h5>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li><strong>口腔外診察</strong>：神経学的・顔面所見</li>
+                  <li><strong>口腔内診察</strong>：軟組織・硬組織・義歯／補綴物</li>
+                  <li><strong>除外すべき病態</strong>：唾液腺疾患／粘膜疾患（水疱性・感染性・自己免疫性=ループス）／慢性粘膜皮膚炎症（扁平苔癬）／特発性（地図状舌）／外傷（化学的・熱的・放射線・機械的）／貧血／金属その他のアレルギー</li>
+                  <li><strong>追加精査</strong>：血液検査／カンジダスメア／<strong>QST</strong>（または代替の <strong>QualST</strong>）／パッチテスト</li>
+                  <li>画像検査は<strong>必須ではない（aspirational）</strong>。</li>
+                </ul>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 p-4 rounded">
+                <h5 className="font-bold text-purple-900 mb-1">Part 3：心理社会的自己報告（Psychosocial）</h5>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>DC/TMD Axis II を<strong>痛み特異的に改変</strong>した尺度群。</li>
+                  <li><strong>短縮版（Short）</strong>：PHQ-4 ／ Ultra-brief Pain Catastrophizing Scale ／ GCPS v2 ／ pain diagram（Part1再利用）</li>
+                  <li><strong>長尺版（Long）</strong>：PHQ-9 ／ GAD-7 ／ PHQ-15 ／ Ultra-brief Catastrophizing ／ <strong>OBC（Oral Behaviors Checklist）</strong> ／ <strong>PROMIS Sleep Disturbance Short Form v1.0</strong> ／ GCPS v2 ／ pain diagram</li>
+                  <li>各尺度の<strong>時間枠は2週間〜3か月に統一</strong>（BMSの3か月診断基準に整合）。GCPSの設問文は「口腔内症状」に合うよう改変。</li>
+                </ul>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 p-4 rounded">
+                <h5 className="font-bold text-amber-900 mb-1">Part 4：願望的バイオマーカー（Aspirational Biomarkers）</h5>
+                <ul className="list-disc pl-5 text-xs space-y-1">
+                  <li>診断には<strong>必須ではないが将来研究に有用</strong>な指標群。</li>
+                  <li>唾液中酸化ストレス（NO・CRP）／神経ペプチド／CGRP／血清サイトカイン・T制御細胞／可溶性CD14・TLR-2 など。</li>
+                  <li>その他の心理社会領域：被虐待歴／自己効力感／体性感覚増幅（somatosensory amplification）／心理社会的ストレス。</li>
+                  <li>QST／末梢ドパミン測定／嗅覚・味覚試験／プロテオミクス／外陰部痛との関連 など、今後の研究課題として列挙。</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* 5. 除外診断のリスト */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">5. 必ず除外すべき「二次性灼熱症状」の原因</h3>
+            <p className="text-sm mb-3">
+              本RDCの根本思想は「<strong>明らかな原因病変が見つかったらBMSとは呼ばない</strong>」こと。次の病態をすべて系統的に除外して初めてBMS診断が成立する。
+            </p>
+            <div className="overflow-x-auto">
+              <table className="text-sm w-full border border-gray-300">
+                <thead className="bg-rose-50">
+                  <tr>
+                    <th className="border px-2 py-1 text-left">カテゴリー</th>
+                    <th className="border px-2 py-1 text-left">疾患・状態</th>
+                    <th className="border px-2 py-1 text-left">主な確認方法</th>
+                  </tr>
+                </thead>
+                <tbody className="text-xs">
+                  <tr><td className="border px-2 py-1 font-medium">感染症</td><td className="border px-2 py-1">カンジダ症</td><td className="border px-2 py-1">口腔内スワブ／スメア</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">粘膜疾患</td><td className="border px-2 py-1">扁平苔癬（OLP）／天疱瘡などの水疱性疾患／ループスなどの自己免疫疾患／地図状舌</td><td className="border px-2 py-1">視診・触診・生検</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">唾液関連</td><td className="border px-2 py-1">口腔乾燥／Sjögren症候群</td><td className="border px-2 py-1">唾液腺機能検査・唾液流量測定</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">栄養・代謝</td><td className="border px-2 py-1">貧血／ビタミンB12欠乏／葉酸欠乏／糖尿病／甲状腺機能低下症</td><td className="border px-2 py-1">血液検査</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">接触性</td><td className="border px-2 py-1">粘膜接触性反応（金属・成分アレルギー）</td><td className="border px-2 py-1">パッチテスト</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">外傷</td><td className="border px-2 py-1">化学的／熱的／放射線／機械的損傷</td><td className="border px-2 py-1">問診・診察</td></tr>
+                  <tr><td className="border px-2 py-1 font-medium">薬剤性</td><td className="border px-2 py-1">ACE阻害薬／プロトンポンプ阻害薬／抗凝固薬など灼熱感を起こしうる薬剤</td><td className="border px-2 py-1">薬剤歴聴取</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* 6. デザインされた診断基準フロー */}
+          <section className="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-xl shadow-sm border-2 border-indigo-300">
+            <h3 className="text-xl font-bold text-indigo-900 border-b-2 border-indigo-300 pb-2 mb-4 text-center">
+              ★ Currie 2020 RDC/BMS 診断基準フロー（デザイン版）
+            </h3>
+
+            {/* Step形式のフローチャート */}
+            <div className="space-y-4">
+              {/* Step 1 */}
+              <div className="bg-white border-2 border-indigo-400 rounded-xl p-5 shadow-md relative">
+                <div className="absolute -left-3 -top-3 bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                <h4 className="font-bold text-indigo-900 mb-2 ml-8">症状の <span className="text-rose-600">必須5要件</span> をすべて満たすか？</h4>
+                <div className="ml-8 grid grid-cols-1 md:grid-cols-5 gap-2 text-xs">
+                  <div className="bg-indigo-50 border border-indigo-200 p-2 rounded text-center">
+                    <strong className="block text-indigo-900">① 性質</strong>
+                    口腔内の<br/><strong>灼熱感</strong>または<br/>異常感覚
+                  </div>
+                  <div className="bg-indigo-50 border border-indigo-200 p-2 rounded text-center">
+                    <strong className="block text-indigo-900">② 部位</strong>
+                    口腔粘膜の<br/><strong>表在性</strong><br/>に感じる
+                  </div>
+                  <div className="bg-indigo-50 border border-indigo-200 p-2 rounded text-center">
+                    <strong className="block text-indigo-900">③ 頻度</strong>
+                    <strong>連日</strong><br/>反復する
+                  </div>
+                  <div className="bg-indigo-50 border border-indigo-200 p-2 rounded text-center">
+                    <strong className="block text-indigo-900">④ 持続</strong>
+                    <strong>1日2時間以上</strong><br/>（ダイアリーで確認）
+                  </div>
+                  <div className="bg-indigo-50 border border-indigo-200 p-2 rounded text-center">
+                    <strong className="block text-indigo-900">⑤ 期間</strong>
+                    <strong>3か月超</strong><br/>※3か月未満は<br/>"probable BMS"
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="text-center text-indigo-600 text-2xl">↓ Yes</div>
+
+              {/* Step 2 */}
+              <div className="bg-white border-2 border-rose-400 rounded-xl p-5 shadow-md relative">
+                <div className="absolute -left-3 -top-3 bg-rose-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                <h4 className="font-bold text-rose-900 mb-2 ml-8">原因病変の <span className="text-rose-600">系統的除外</span></h4>
+                <p className="ml-8 text-sm mb-2">下記をすべてチェックし、原因となる病変が <strong>すべて陰性</strong> であること：</p>
+                <div className="ml-8 grid grid-cols-2 md:grid-cols-4 gap-1 text-xs">
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ カンジダ（スメア）</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 扁平苔癬／粘膜疾患</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 唾液腺機能（流量低下）</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 接触性反応（パッチ）</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 貧血／B12／葉酸</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 糖尿病／甲状腺</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ Sjögren症候群</div>
+                  <div className="bg-rose-50 border border-rose-200 p-2 rounded">☐ 薬剤性／外傷</div>
+                </div>
+                <p className="ml-8 text-xs mt-2 text-rose-700">
+                  ※例外：粘膜痛障害として治療後も灼熱症状が残存する患者は <strong>RDC/BMSで再分類可</strong>。
+                </p>
+              </div>
+
+              <div className="text-center text-rose-600 text-2xl">↓ すべて陰性</div>
+
+              {/* Step 3 */}
+              <div className="bg-white border-2 border-purple-400 rounded-xl p-5 shadow-md relative">
+                <div className="absolute -left-3 -top-3 bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                <h4 className="font-bold text-purple-900 mb-2 ml-8">Axis II：心理社会的評価（必須）</h4>
+                <div className="ml-8 grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                  <div className="bg-purple-50 border border-purple-200 p-3 rounded">
+                    <strong className="text-purple-900 block mb-1">短縮版（スクリーニング）</strong>
+                    PHQ-4／Ultra-brief Catastrophizing／GCPS v2／pain diagram
+                  </div>
+                  <div className="bg-purple-50 border border-purple-200 p-3 rounded">
+                    <strong className="text-purple-900 block mb-1">長尺版（詳細評価）</strong>
+                    PHQ-9／GAD-7／PHQ-15／OBC／PROMIS Sleep／GCPS v2／pain diagram
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center text-purple-600 text-2xl">↓</div>
+
+              {/* Step 4 */}
+              <div className="bg-white border-2 border-amber-400 rounded-xl p-5 shadow-md relative">
+                <div className="absolute -left-3 -top-3 bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">4</div>
+                <h4 className="font-bold text-amber-900 mb-2 ml-8">願望的バイオマーカー（任意）</h4>
+                <p className="ml-8 text-xs">QST／末梢ドパミン／嗅覚・味覚検査／唾液NO・CRP／神経ペプチド・CGRP／TRPV1関連／プロテオミクス／VVD（外陰部痛）の併存評価 など。診断には不要だが、研究データとして収集を推奨。</p>
+              </div>
+
+              <div className="text-center text-amber-600 text-2xl">↓</div>
+
+              {/* Final Diagnosis */}
+              <div className="bg-emerald-50 border-2 border-emerald-500 rounded-xl p-6 shadow-lg">
+                <h4 className="font-bold text-emerald-900 text-center text-lg mb-2">
+                  ✓ RDC/BMS による BMS 確定診断
+                </h4>
+                <p className="text-center text-sm text-emerald-800">
+                  Axis I：身体的診断（BMS）／Axis II：心理社会的プロファイル
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 7. 重要ポイント */}
+          <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-100 pb-2 mb-3">7. RDC/BMSの臨床的意義（テイクホーム）</h3>
+            <ol className="list-decimal pl-6 text-sm space-y-2">
+              <li><strong>「真のBMS」と「BMS様症状」を明確に区別する初の国際合意基準</strong>。研究組み入れ・除外を標準化し、メタ解析の質を底上げする。</li>
+              <li>診断は<strong>「症状要件＋系統的除外」</strong>の2段階。Axis IIの心理社会的評価を<strong>必須化</strong>した点はTMD研究の延長にあり、生物心理社会モデルを徹底。</li>
+              <li><strong>1か月ダイアリー</strong>と<strong>pain diagram（舌専用図含む）</strong>は、患者の主観だけでなく客観的な「2時間/日・3か月」の確認手段として有用。</li>
+              <li><strong>QSTはaspirational</strong>（必須ではない）。機材のない施設でも代替の<strong>QualST</strong>で運用可。BMSの末梢／中枢サブタイピングは今後の課題。</li>
+              <li>本RDCは <strong>ベータ版（beta test version）</strong>。多施設での試行・改訂後に正式版が発表される予定。臨床応用には慎重な解釈が必要。</li>
+              <li>画像検査・サブタイプ分類・バイオマーカーは<strong>必須要素から外す</strong>ことで、地域格差なく国際的に普及できる設計になっている。</li>
+              <li>3か月未満の症例も<strong>"probable BMS"</strong>として扱えるため、早期介入研究にも応用可能。</li>
+            </ol>
+          </section>
+
+          {/* 8. 限界とG先生（Guyatt）視点 */}
+          <section className="bg-slate-50 p-5 rounded-xl border border-slate-300 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900 border-b-2 border-slate-300 pb-2 mb-3">8. 限界とEBM的視点</h3>
+            <ul className="list-disc pl-6 text-sm space-y-2">
+              <li><strong>Delphi合意 ≠ エビデンス</strong>：12名の専門家意見の合意であり、診断基準の<strong>妥当性・信頼性（reliability・validity）は未検証</strong>。今後のフィールドテストで偽陽性・偽陰性率を評価する必要がある。</li>
+              <li><strong>専門家の地理的・学派的偏り</strong>：欧米・日本のINfORMメンバー中心。アジア・南米・アフリカの臨床現場での適用性は未確認。</li>
+              <li><strong>サブタイプ分類が未反映</strong>：Jääskeläinen 2017の「末梢型／中枢型」モデルはRDC本体に組み込まれていない（Aspirational扱い）。研究現場では別途phenotypingを追加することが推奨される。</li>
+              <li><strong>「probable BMS」の妥当性</strong>：3か月未満の患者は自然軽快も多く、「probable BMS」基準で組み入れた場合、自然回復による治療効果の過大評価リスクがある。</li>
+              <li><strong>ベータ版である</strong>：著者自身が「使用には臨床的解釈を要する（should be used with clinical interpretation）」と明記。正式版の発表を待つ姿勢が望ましい。</li>
+            </ul>
+          </section>
+        </div>
+      )
     }
   ]
 };
