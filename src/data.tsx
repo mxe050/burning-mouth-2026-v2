@@ -27,8 +27,6 @@ import { relationshipChapter } from './data/relationship';
 import { similaritiesChapter } from './data/similarities';
 import { pathophysiologyChapter } from './data/pathophysiology';
 import { treatmentMechanismChapter } from './data/treatmentMechanism';
-import { expertDiscussionChapter } from './data/expertDiscussion';
-import { expertLecturesChapter } from './data/expertLectures';
 import { expertSummaryChapter } from './data/expertSummary';
 
 export const coverChapter: Chapter = {
@@ -925,15 +923,5 @@ export const chapters: Chapter[] = [
       }
     ]
   },
-  expertSummaryChapter,
-  {
-    id: 'chapter-reserved-room',
-    title: '予備室（パスワード）',
-    icon: expertLecturesChapter.icon,
-    password: 'yuasa2026',
-    subSections: [
-      ...expertDiscussionChapter.subSections,
-      ...expertLecturesChapter.subSections,
-    ],
-  }
+  expertSummaryChapter
 ];

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronRight, ChevronUp, ChevronDown, Lock, Unlock } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
 import { chapters } from './data';
 
 export default function App() {
@@ -8,14 +8,10 @@ export default function App() {
   const [activeSection, setActiveSection] = useState(chapters[0].subSections[0].id);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [unlockedChapters, setUnlockedChapters] = useState<string[]>([]);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [passwordError, setPasswordError] = useState(false);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const activeChapter = chapters.find(c => c.id === activeChapterId) || chapters[0];
-  const isLocked = activeChapter.password && !unlockedChapters.includes(activeChapter.id);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,8 +49,6 @@ export default function App() {
   const handleChapterClick = (chapterId: string) => {
     if (activeChapterId !== chapterId) {
       setActiveChapterId(chapterId);
-      setPasswordInput('');
-      setPasswordError(false);
       const chapter = chapters.find(c => c.id === chapterId);
       if (chapter && chapter.subSections.length > 0) {
         setActiveSection(chapter.subSections[0].id);
@@ -62,17 +56,6 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false);
-  };
-
-  const handleUnlock = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (activeChapter.password === passwordInput) {
-      setUnlockedChapters([...unlockedChapters, activeChapter.id]);
-      setPasswordError(false);
-      setPasswordInput('');
-    } else {
-      setPasswordError(true);
-    }
   };
 
   const handleSectionClick = (chapterId: string, sectionId: string) => {
@@ -159,7 +142,7 @@ export default function App() {
                   </button>
                   
                   <AnimatePresence>
-                    {activeChapterId === chapter.id && (!chapter.password || unlockedChapters.includes(chapter.id)) && (
+                    {activeChapterId === chapter.id && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
@@ -230,7 +213,7 @@ export default function App() {
                 </button>
                 
                 <AnimatePresence>
-                  {activeChapterId === chapter.id && (!chapter.password || unlockedChapters.includes(chapter.id)) && (
+                  {activeChapterId === chapter.id && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -282,7 +265,7 @@ export default function App() {
                   <div className="border-b-2 border-indigo-100 pb-4 mb-8">
                     <div className="flex items-center">
                       <div className="bg-indigo-100 p-3 rounded-xl text-indigo-700 mr-4 shadow-sm">
-                        {isLocked ? <Lock className="w-6 h-6" /> : activeChapter.icon}
+                        {activeChapter.icon}
                       </div>
                       <h2 className="text-3xl font-bold text-indigo-900 leading-tight">
                         {activeChapter.title}
@@ -291,48 +274,7 @@ export default function App() {
                   </div>
                 )}
 
-                {isLocked ? (
-                  <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center max-w-md mx-auto mt-12">
-                    <div className="bg-indigo-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Lock className="w-8 h-8 text-indigo-600" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">パスワード保護されたコンテンツ</h3>
-                    <p className="text-gray-600 mb-6 text-sm">
-                      この章を閲覧するにはパスワードを入力してください。
-                    </p>
-                    <form onSubmit={handleUnlock} className="space-y-4">
-                      <div>
-                        <input
-                          type="password"
-                          value={passwordInput}
-                          onChange={(e) => {
-                            setPasswordInput(e.target.value);
-                            if (passwordError) setPasswordError(false);
-                          }}
-                          placeholder="パスワードを入力"
-                          className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-colors ${
-                            passwordError 
-                              ? 'border-red-300 focus:ring-red-500 focus:border-red-500 bg-red-50' 
-                              : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
-                          }`}
-                        />
-                        {passwordError && (
-                          <p className="text-red-500 text-sm mt-2 text-left">
-                            パスワードが正しくありません。
-                          </p>
-                        )}
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
-                      >
-                        <Unlock className="w-5 h-5 mr-2" />
-                        ロックを解除
-                      </button>
-                    </form>
-                  </div>
-                ) : (
-                  activeChapter.subSections.map((section) => (
+                {activeChapter.subSections.map((section) => (
                     <section 
                       key={section.id} 
                       id={section.id}
@@ -347,8 +289,7 @@ export default function App() {
                         {section.content}
                       </div>
                     </section>
-                  ))
-                )}
+                  ))}
               </motion.div>
             </AnimatePresence>
 

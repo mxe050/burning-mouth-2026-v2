@@ -12,5 +12,4 @@ export type Chapter = {
   title: string;
   icon: ReactNode;
   subSections: SubSection[];
-  password?: string;
 };

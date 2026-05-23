@@ -16,7 +16,7 @@ export const expertSummaryChapter: Chapter = {
             よって、引用となる論文はありません。その専門医の情報が間違っているという問題は残りますが、ネットのいい加減な情報は含まれていません。講義は、ほとんどが無料のものですが、多くが公開されておりません。また、本作成者が講義を聞いてメモした内容も多く含まれるため、記載ミスもありますので注意してください。
           </p>
           <p className="text-sm text-amber-900 bg-white/70 p-4 rounded border border-amber-200 leading-relaxed">
-            以下では、「予備室（パスワード）」に収載した
+            以下では、
             <strong>専門家会議</strong>と<strong>5つの講義（有名な日本の先生講演など／海外のセミナー）</strong>を横断的に整理し、
             <strong>「BMS（舌痛症）と口腔顔面痛をどう理解し、どう診断し、どう治療戦略を立てるか」</strong>という一本の流れに再構成しました。
             医学的には教育目的の整理であり、個別患者への診断・処方指示ではありません。
@@ -114,7 +114,7 @@ export const expertSummaryChapter: Chapter = {
             一方、欧州のSvensson教授らは<strong>痛覚変調性疼痛</strong>の側面を強く提唱しています。
           </p>
           <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg text-sm">
-            <p className="font-bold text-yellow-900 mb-1">K先生の厳密な定義（予備室1より）</p>
+            <p className="font-bold text-yellow-900 mb-1">K先生の厳密な定義</p>
             <p>
               「痛覚変調性疼痛の代表的疾患」という言い回しは不正確で、正しくは
               「<strong>もしその患者が痛みを訴えるなら、痛覚変調性疼痛の機序で生じていると考えるのが最も妥当な疾患</strong>」。
