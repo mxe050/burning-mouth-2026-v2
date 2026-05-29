@@ -28,6 +28,7 @@ import { similaritiesChapter } from './data/similarities';
 import { pathophysiologyChapter } from './data/pathophysiology';
 import { treatmentMechanismChapter } from './data/treatmentMechanism';
 import { expertSummaryChapter } from './data/expertSummary';
+import { oralDrynessChapter } from './data/oralDryness';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -923,5 +924,6 @@ export const chapters: Chapter[] = [
       }
     ]
   },
-  expertSummaryChapter
+  expertSummaryChapter,
+  oralDrynessChapter
 ];
