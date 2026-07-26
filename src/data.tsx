@@ -29,6 +29,7 @@ import { pathophysiologyChapter } from './data/pathophysiology';
 import { treatmentMechanismChapter } from './data/treatmentMechanism';
 import { expertSummaryChapter } from './data/expertSummary';
 import { oralDrynessChapter } from './data/oralDryness';
+import { interviewTipsSection } from './data/interviewTips';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -586,6 +587,8 @@ export const chapters: Chapter[] = [
       }
     ]
   },
+  expertSummaryChapter,
+  oralDrynessChapter,
   {
     id: "chapter-personal-view",
     title: "個人的見解（舌痛症：口腔顔面痛）",
@@ -921,9 +924,8 @@ export const chapters: Chapter[] = [
             </div>
           </div>
         )
-      }
+      },
+      interviewTipsSection
     ]
-  },
-  expertSummaryChapter,
-  oralDrynessChapter
+  }
 ];

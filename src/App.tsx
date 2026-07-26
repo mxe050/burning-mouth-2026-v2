@@ -132,7 +132,11 @@ export default function App() {
                       <span className={`mr-3 ${activeChapterId === chapter.id ? 'text-indigo-600' : 'text-gray-400'}`}>
                         {chapter.icon}
                       </span>
-                      <span className="text-sm line-clamp-2">{chapter.title}</span>
+                      <span className={`text-sm line-clamp-2 ${
+                        chapter.id === 'chapter-personal-view' ? 'font-semibold text-red-600' : ''
+                      }`}>
+                        {chapter.title}
+                      </span>
                     </div>
                     {activeChapterId === chapter.id ? (
                       <ChevronDown className="w-4 h-4 text-indigo-400 shrink-0" />
@@ -201,7 +205,11 @@ export default function App() {
                     }`}>
                       {chapter.icon}
                     </span>
-                    <span className="text-sm leading-snug">{chapter.title}</span>
+                    <span className={`text-sm leading-snug ${
+                      chapter.id === 'chapter-personal-view' ? 'font-semibold text-red-600' : ''
+                    }`}>
+                      {chapter.title}
+                    </span>
                   </div>
                   <div className="mt-1 shrink-0 ml-2">
                     {activeChapterId === chapter.id ? (
