@@ -280,6 +280,7 @@ export const harvardRoundsChapter: Chapter = {
             <div className="mt-5 border-t border-indigo-200 pt-5 text-sm text-indigo-950">
               <p className="font-bold">初めて見る方へ：公式の無料登録</p>
               <p className="mt-2">公式案内では、登録は無料で、シーズン中は一度の登録で講義へのZoomアクセスと案内メールを受け取れます。登録画面で氏名、メールアドレス、居住国、職種を入力して送信してください。</p>
+              <p className="mt-3 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-amber-950"><span className="font-bold">現在の公開状況：</span>以前に閲覧できた場合でも、現在は公式アーカイブ上の動画・資料を開けない状態です。公式サイト側で公開方法や内容が変更される可能性があるため、最新状況は公式アーカイブでご確認ください。</p>
               <a
                 href={registrationUrl}
                 target="_blank"
