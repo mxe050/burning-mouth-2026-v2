@@ -30,6 +30,7 @@ import { treatmentMechanismChapter } from './data/treatmentMechanism';
 import { expertSummaryChapter } from './data/expertSummary';
 import { oralDrynessChapter } from './data/oralDryness';
 import { interviewTipsSection } from './data/interviewTips';
+import { harvardRoundsChapter } from './data/painHeadacheRounds';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -927,5 +928,6 @@ export const chapters: Chapter[] = [
       },
       interviewTipsSection
     ]
-  }
+  },
+  harvardRoundsChapter
 ];
