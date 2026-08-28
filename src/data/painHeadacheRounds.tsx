@@ -1,7 +1,8 @@
-import { ExternalLink, FileText, Globe2, Video } from 'lucide-react';
+import { ExternalLink, Globe2 } from 'lucide-react';
 import type { Chapter } from '../types';
 
 const archiveUrl = 'https://www.painandheadacherounds.com/archive';
+const registrationUrl = 'https://www.painandheadacherounds.com/register';
 
 type Season = {
   year: string;
@@ -242,25 +243,6 @@ const seasons: Season[] = [
 
 const totalLectures = seasons.reduce((total, season) => total + season.lectures.length, 0);
 
-const ArchiveAction = ({ kind }: { kind: 'video' | 'summary' }) => {
-  const isVideo = kind === 'video';
-  const Icon = isVideo ? Video : FileText;
-
-  return (
-    <a
-      href={archiveUrl}
-      target="_blank"
-      rel="noreferrer"
-      title="公式サイトで個別コンテンツが公開されたかを確認する"
-      className="inline-flex items-center gap-1 rounded-md border border-indigo-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-indigo-700 transition-colors hover:border-indigo-400 hover:bg-indigo-50"
-    >
-      <Icon className="h-3.5 w-3.5" />
-      {isVideo ? '動画' : '平易な要約'}
-      <ExternalLink className="h-3 w-3" aria-hidden="true" />
-    </a>
-  );
-};
-
 export const harvardRoundsChapter: Chapter = {
   id: 'chapter-harvard-rounds',
   title: 'ハーバード大学学際的疼痛・頭痛ラウンド',
@@ -287,15 +269,28 @@ export const harvardRoundsChapter: Chapter = {
                 className="inline-flex items-center gap-2 rounded-md bg-indigo-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-indigo-800"
               >
                 <Globe2 className="h-4 w-4" />
-                公式アーカイブを開く
+                この講義アーカイブに行く
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
               <span className="text-sm text-indigo-950">公式掲載名：The Rounds - Pain &amp; Headache Education</span>
             </div>
             <p className="mt-4 text-sm text-indigo-950">
-              公式アーカイブには、動画録画と平易な要約は「coming soon（準備中）」と記載されています。したがって各行の「動画」「平易な要約」は、存在しない個別URLを推測せず、公開状況を確認できる公式アーカイブへリンクしています。
+              講義の動画や平易な要約を見たいときは、上のボタンから公式アーカイブを開いてください。講義ごとの行には、誤って同じ登録ページへ進むボタンを置いていません。
             </p>
-            <p className="mt-3 text-xs text-indigo-900">日本語訳は本アプリによる訳です。正確な原題と公開状況は公式アーカイブでご確認ください。</p>
+            <div className="mt-5 border-t border-indigo-200 pt-5 text-sm text-indigo-950">
+              <p className="font-bold">初めて見る方へ：公式の無料登録</p>
+              <p className="mt-2">公式案内では、登録は無料で、シーズン中は一度の登録で講義へのZoomアクセスと案内メールを受け取れます。登録画面で氏名、メールアドレス、居住国、職種を入力して送信してください。</p>
+              <a
+                href={registrationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-md border border-indigo-300 bg-white px-3 py-2 text-sm font-bold text-indigo-800 transition-colors hover:border-indigo-500 hover:bg-indigo-100"
+              >
+                無料登録ページを開く
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            </div>
+            <p className="mt-4 text-xs text-indigo-900">日本語訳は本アプリによる訳です。正確な原題と公開状況は公式アーカイブでご確認ください。</p>
           </section>
 
           <section className="space-y-4" aria-label="年度別講義一覧">
@@ -307,12 +302,8 @@ export const harvardRoundsChapter: Chapter = {
                 </summary>
                 <ol className="list-none divide-y divide-gray-200 border-t border-gray-200">
                   {season.lectures.map((lecture, index) => (
-                    <li key={season.year + '-' + index} className="grid gap-4 px-5 py-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+                    <li key={season.year + '-' + index} className="px-5 py-4">
                       <p className="font-semibold text-gray-950">{index + 1}. {lecture}</p>
-                      <div className="flex flex-wrap gap-2">
-                        <ArchiveAction kind="video" />
-                        <ArchiveAction kind="summary" />
-                      </div>
                     </li>
                   ))}
                 </ol>
