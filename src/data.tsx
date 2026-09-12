@@ -31,6 +31,8 @@ import { expertSummaryChapter } from './data/expertSummary';
 import { oralDrynessChapter } from './data/oralDryness';
 import { interviewTipsSection } from './data/interviewTips';
 import { harvardRoundsChapter } from './data/painHeadacheRounds';
+import { tmdDiscussionChapter } from './data/tmdDiscussion';
+import { SITE_TITLE } from './site';
 
 export const coverChapter: Chapter = {
   id: "chapter-cover",
@@ -43,7 +45,7 @@ export const coverChapter: Chapter = {
       content: (
         <div className="space-y-6 text-gray-700 leading-relaxed bg-white p-6 md:p-10 rounded-xl shadow-sm border border-gray-200 mt-4">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">バーニングマウス症候群<br className="md:hidden" />（舌痛症）解説</h1>
+            <h1 className="text-2xl md:text-4xl font-bold text-indigo-900 leading-relaxed mb-4">{SITE_TITLE}</h1>
             <p className="text-lg text-gray-600">専門医の見解とアプローチ</p>
           </div>
           
@@ -929,5 +931,6 @@ export const chapters: Chapter[] = [
       interviewTipsSection
     ]
   },
-  harvardRoundsChapter
+  harvardRoundsChapter,
+  tmdDiscussionChapter
 ];

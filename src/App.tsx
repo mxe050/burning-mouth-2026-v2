@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronUp, ChevronDown, ArrowLeft } from 'lucide-react';
 import { chapters } from './data';
+import { SITE_TITLE } from './site';
 
 export default function App() {
   const [activeChapterId, setActiveChapterId] = useState(chapters[0].id);
@@ -98,10 +99,12 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900 selection:bg-indigo-200 selection:text-indigo-900">
       {/* Mobile Header */}
       <header className="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
-        <h1 className="font-bold text-lg text-indigo-900 truncate pr-4">バーニングマウス症候群（舌痛症）</h1>
+        <h1 className="font-bold text-lg text-indigo-900 pr-4" title={SITE_TITLE}>口腔顔面痛 あれこれ</h1>
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 -mr-2 text-gray-600 hover:text-indigo-600 focus:outline-none"
+          className="p-2 -mr-2 shrink-0 text-gray-600 hover:text-indigo-600 focus-visible:outline-2 focus-visible:outline-indigo-600"
+          aria-label={isMobileMenuOpen ? '目次を閉じる' : '目次を開く'}
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -128,11 +131,11 @@ export default function App() {
                         : 'text-gray-800 hover:bg-gray-50'
                     }`}
                   >
-                    <div className="flex items-center">
-                      <span className={`mr-3 ${activeChapterId === chapter.id ? 'text-indigo-600' : 'text-gray-400'}`}>
+                    <div className="flex items-start min-w-0">
+                      <span className={`mr-3 shrink-0 ${activeChapterId === chapter.id ? 'text-indigo-600' : 'text-gray-400'}`}>
                         {chapter.icon}
                       </span>
-                      <span className={`text-sm line-clamp-2 ${
+                      <span className={`text-sm leading-snug ${
                         chapter.id === 'chapter-personal-view' ? 'font-semibold text-red-600' : ''
                       }`}>
                         {chapter.title}
@@ -180,9 +183,8 @@ export default function App() {
         {/* Desktop Sidebar */}
         <aside className="hidden md:block w-80 shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-gray-200 bg-white/50 backdrop-blur-sm py-8 pl-8 pr-6">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-indigo-900 leading-tight">
-              バーニングマウス症候群<br/>
-              <span className="text-lg text-indigo-600">（舌痛症）解説</span>
+            <h1 className="text-xl font-bold text-indigo-900 leading-relaxed">
+              {SITE_TITLE}
             </h1>
             <p className="text-sm text-gray-500 mt-2">専門医の見解とアプローチ</p>
           </div>
@@ -252,12 +254,14 @@ export default function App() {
         {/* Main Content */}
         <main className="flex-1 min-w-0 py-8 px-4 md:px-12 lg:px-16 pb-32">
           <div className="max-w-3xl mx-auto">
-            <div className="mb-12 md:hidden">
-              <h1 className="text-3xl font-bold text-indigo-900 leading-tight mb-2">
-                バーニングマウス症候群（舌痛症）解説
-              </h1>
-              <p className="text-gray-600">専門医の見解とアプローチ</p>
-            </div>
+            {activeChapter.id !== 'chapter-cover' && (
+              <div className="mb-12 md:hidden">
+                <h1 className="text-2xl font-bold text-indigo-900 leading-relaxed mb-2">
+                  {SITE_TITLE}
+                </h1>
+                <p className="text-gray-600">専門医の見解とアプローチ</p>
+              </div>
+            )}
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -271,11 +275,11 @@ export default function App() {
                 {/* Chapter Header */}
                 {activeChapter.id !== 'chapter-cover' && (
                   <div className="border-b-2 border-indigo-100 pb-4 mb-8">
-                    <div className="flex items-center">
-                      <div className="bg-indigo-100 p-3 rounded-xl text-indigo-700 mr-4 shadow-sm">
+                    <div className="flex items-start">
+                      <div className="bg-indigo-100 p-3 rounded-xl text-indigo-700 mr-4 shadow-sm shrink-0">
                         {activeChapter.icon}
                       </div>
-                      <h2 className="text-3xl font-bold text-indigo-900 leading-tight">
+                      <h2 className="text-2xl md:text-3xl font-bold text-indigo-900 leading-relaxed min-w-0">
                         {activeChapter.title}
                       </h2>
                     </div>
@@ -300,6 +304,18 @@ export default function App() {
                   ))}
               </motion.div>
             </AnimatePresence>
+
+            {activeChapter.id === 'chapter-tmd-discussion' && (
+              <div className="mt-12">
+                <button
+                  onClick={() => handleChapterClick(chapters[0].id)}
+                  className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-white px-5 py-3 font-medium text-indigo-700 hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-indigo-600"
+                >
+                  <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                  表紙・はじめにへ戻る
+                </button>
+              </div>
+            )}
 
             {/* Next Chapter Navigation */}
             {chapters.findIndex(c => c.id === activeChapter.id) < chapters.length - 1 && (
@@ -326,7 +342,7 @@ export default function App() {
 
       {/* Scroll to top button */}
       <AnimatePresence>
-        {showScrollTop && (
+        {showScrollTop && !isMobileMenuOpen && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
