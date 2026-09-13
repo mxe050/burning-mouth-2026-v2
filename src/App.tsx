@@ -26,6 +26,7 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const activeChapter = chapters.find(c => c.id === activeChapterId) || chapters[0];
+  const isTmdDiscussion = activeChapter.id === 'chapter-tmd-discussion';
 
   useEffect(() => {
     const handlePopState = () => {
@@ -163,9 +164,9 @@ export default function App() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 min-w-0 py-8 px-4 md:px-12 lg:px-16 pb-32">
+        <main className={`flex-1 min-w-0 py-8 px-4 md:px-12 lg:px-16 pb-32 ${isTmdDiscussion ? 'tmd-page' : ''}`}>
           <div className="max-w-3xl mx-auto">
-            {activeChapter.id !== 'chapter-cover' && (
+            {activeChapter.id !== 'chapter-cover' && !isTmdDiscussion && (
               <div className="mb-12 md:hidden">
                 <h1 className="text-2xl font-bold text-indigo-900 leading-relaxed mb-2">
                   {SITE_TITLE}
@@ -181,13 +182,13 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="space-y-16"
+                className={isTmdDiscussion ? 'tmd-article' : 'space-y-16'}
               >
                 {/* Chapter Header */}
                 {activeChapter.id !== 'chapter-cover' && (
-                  <div className="border-b-2 border-indigo-100 pb-4 mb-8">
+                  <div className="chapter-heading border-b-2 border-indigo-100 pb-4 mb-8">
                     <div className="flex items-start">
-                      <div className="bg-indigo-100 p-3 rounded-xl text-indigo-700 mr-4 shadow-sm shrink-0">
+                      <div className="chapter-icon bg-indigo-100 p-3 rounded-xl text-indigo-700 mr-4 shadow-sm shrink-0">
                         {activeChapter.icon}
                       </div>
                       <h2 className="text-2xl md:text-3xl font-bold text-indigo-900 leading-relaxed min-w-0">
@@ -208,7 +209,7 @@ export default function App() {
                           {section.title}
                         </h3>
                       )}
-                      <div className="text-gray-800">
+                      <div className={isTmdDiscussion ? 'tmd-prose' : 'text-gray-800'}>
                         {section.content}
                       </div>
                     </section>
@@ -216,7 +217,7 @@ export default function App() {
               </motion.div>
             </AnimatePresence>
 
-            {activeChapter.id === 'chapter-tmd-discussion' && (
+            {isTmdDiscussion && (
               <div className="mt-12">
                 <button
                   onClick={() => handleChapterClick(chapters[0].id)}

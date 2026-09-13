@@ -4,3 +4,165 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Reading styles for the long-form TMD discussion. */
+.tmd-page {
+  background: #fff;
+  padding-top: 1.5rem;
+  padding-bottom: 6rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
+}
+
+.tmd-article {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.8;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+.tmd-article > * + * {
+  margin-top: 2.25rem;
+}
+
+.tmd-article .chapter-heading {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.tmd-article .chapter-icon {
+  margin-right: 0.75rem;
+  padding: 0.625rem;
+  color: #365a7c;
+  background: #edf3f9;
+  box-shadow: none;
+}
+
+.tmd-article h2 {
+  color: #1e3a5f;
+  font-size: 1.375rem;
+  line-height: 1.5;
+}
+
+.tmd-article h3 {
+  margin-bottom: 0.875rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid #7d9cbd;
+  color: #1e3a5f;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+}
+
+.tmd-prose > div {
+  color: inherit;
+  line-height: inherit;
+}
+
+/* The imported document uses a paragraph for each sentence. */
+.tmd-prose > div > * {
+  margin-block: 0;
+}
+
+.tmd-prose > div > * + * {
+  margin-top: 0.5rem;
+}
+
+.tmd-prose h4 {
+  padding-top: 0;
+  color: #294766;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.tmd-prose > div > h4:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.tmd-prose strong {
+  color: #243f5d;
+  font-weight: 600;
+}
+
+.tmd-prose a {
+  color: #1d4ed8;
+  text-decoration-color: #93b4e9;
+  text-underline-offset: 0.2em;
+}
+
+.tmd-prose a:hover {
+  color: #1e40af;
+  text-decoration-color: currentColor;
+}
+
+.tmd-prose a:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.tmd-prose > div > ul {
+  margin-bottom: 1rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid #dce6f2;
+  border-radius: 0.625rem;
+  background: #f1f5fa;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.tmd-prose > div > ul > li {
+  margin-block: 0;
+}
+
+.tmd-prose > div > ul > li + li {
+  margin-top: 0.5rem;
+}
+
+.tmd-prose table {
+  color: #334155;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.tmd-prose :is(th, td) {
+  padding: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .tmd-page {
+    padding-top: 2rem;
+  }
+
+  .tmd-article {
+    font-size: 1.0625rem;
+  }
+
+  .tmd-article > * + * {
+    margin-top: 2.75rem;
+  }
+
+  .tmd-article h2 {
+    font-size: 1.75rem;
+  }
+
+  .tmd-article h3 {
+    font-size: 1.375rem;
+  }
+
+  .tmd-prose > div > * + * {
+    margin-top: 0.625rem;
+  }
+
+  .tmd-prose h4 {
+    font-size: 1.1875rem;
+  }
+
+  .tmd-prose > div > h4:not(:first-child) {
+    margin-top: 1.75rem;
+  }
+
+  .tmd-prose table {
+    font-size: 0.9375rem;
+  }
+}
