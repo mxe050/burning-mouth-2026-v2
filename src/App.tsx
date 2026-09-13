@@ -4,15 +4,44 @@ import { Menu, X, ChevronRight, ChevronUp, ChevronDown, ArrowLeft } from 'lucide
 import { chapters } from './data';
 import { SITE_TITLE } from './site';
 
+function getChapterFromUrl() {
+  const page = new URLSearchParams(window.location.search).get('page');
+  return chapters.find(chapter => chapter.id === `chapter-${page}`) || chapters[0];
+}
+
+function updateChapterUrl(chapterId: string) {
+  const url = new URL(window.location.href);
+  if (chapterId === chapters[0].id) {
+    url.searchParams.delete('page');
+  } else {
+    url.searchParams.set('page', chapterId.replace(/^chapter-/, ''));
+  }
+  url.hash = '';
+  window.history.pushState(null, '', url);
+}
+
 export default function App() {
-  const [activeChapterId, setActiveChapterId] = useState(chapters[0].id);
-  const [activeSection, setActiveSection] = useState(chapters[0].subSections[0].id);
+  const [activeChapterId, setActiveChapterId] = useState(() => getChapterFromUrl().id);
+  const [activeSection, setActiveSection] = useState(() => getChapterFromUrl().subSections[0].id);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const activeChapter = chapters.find(c => c.id === activeChapterId) || chapters[0];
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const chapter = getChapterFromUrl();
+      setActiveChapterId(chapter.id);
+      setActiveSection(chapter.subSections[0].id);
+      setIsMobileMenuOpen(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +78,7 @@ export default function App() {
 
   const handleChapterClick = (chapterId: string) => {
     if (activeChapterId !== chapterId) {
+      updateChapterUrl(chapterId);
       setActiveChapterId(chapterId);
       const chapter = chapters.find(c => c.id === chapterId);
       if (chapter && chapter.subSections.length > 0) {
@@ -73,6 +103,7 @@ export default function App() {
     }, 1000);
 
     if (activeChapterId !== chapterId) {
+      updateChapterUrl(chapterId);
       setActiveChapterId(chapterId);
       setTimeout(() => {
         scrollToSection(sectionId);
