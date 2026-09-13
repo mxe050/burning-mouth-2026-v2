@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronRight, ChevronUp, ChevronDown, ArrowLeft } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronUp, ArrowLeft } from 'lucide-react';
 import { chapters } from './data';
 import { SITE_TITLE } from './site';
 
@@ -22,11 +22,8 @@ function updateChapterUrl(chapterId: string) {
 
 export default function App() {
   const [activeChapterId, setActiveChapterId] = useState(() => getChapterFromUrl().id);
-  const [activeSection, setActiveSection] = useState(() => getChapterFromUrl().subSections[0].id);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const isScrollingRef = useRef(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const activeChapter = chapters.find(c => c.id === activeChapterId) || chapters[0];
 
@@ -34,7 +31,6 @@ export default function App() {
     const handlePopState = () => {
       const chapter = getChapterFromUrl();
       setActiveChapterId(chapter.id);
-      setActiveSection(chapter.subSections[0].id);
       setIsMobileMenuOpen(false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -46,80 +42,20 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
-
-      if (isScrollingRef.current) return;
-
-      const sectionElements = activeChapter.subSections.map(s => document.getElementById(s.id));
-      let currentSectionId = activeChapter.subSections[0]?.id;
-      
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
-
-      if (isAtBottom && sectionElements.length > 0) {
-        currentSectionId = sectionElements[sectionElements.length - 1]?.id || currentSectionId;
-      } else {
-        for (const el of sectionElements) {
-          if (el) {
-            const rect = el.getBoundingClientRect();
-            if (rect.top <= 150) {
-              currentSectionId = el.id;
-            }
-          }
-        }
-      }
-      
-      if (currentSectionId) {
-        setActiveSection(currentSectionId);
-      }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeChapter]);
+  }, []);
 
   const handleChapterClick = (chapterId: string) => {
     if (activeChapterId !== chapterId) {
       updateChapterUrl(chapterId);
       setActiveChapterId(chapterId);
-      const chapter = chapters.find(c => c.id === chapterId);
-      if (chapter && chapter.subSections.length > 0) {
-        setActiveSection(chapter.subSections[0].id);
-      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false);
-  };
-
-  const handleSectionClick = (chapterId: string, sectionId: string) => {
-    isScrollingRef.current = true;
-    setActiveSection(sectionId);
-    
-    if (scrollTimeoutRef.current) {
-      clearTimeout(scrollTimeoutRef.current);
-    }
-    
-    // Re-enable scroll listener after animation completes
-    scrollTimeoutRef.current = setTimeout(() => {
-      isScrollingRef.current = false;
-    }, 1000);
-
-    if (activeChapterId !== chapterId) {
-      updateChapterUrl(chapterId);
-      setActiveChapterId(chapterId);
-      setTimeout(() => {
-        scrollToSection(sectionId);
-      }, 100);
-    } else {
-      scrollToSection(sectionId);
-    }
-    setIsMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
   };
 
   const scrollToTop = () => {
@@ -156,6 +92,7 @@ export default function App() {
                 <div key={`mobile-chapter-${chapter.id}`} className="space-y-1">
                   <button
                     onClick={() => handleChapterClick(chapter.id)}
+                    aria-current={activeChapterId === chapter.id ? 'page' : undefined}
                     className={`w-full text-left px-3 py-3 rounded-lg flex items-center justify-between transition-colors font-medium ${
                       activeChapterId === chapter.id
                         ? 'bg-indigo-50 text-indigo-700'
@@ -172,37 +109,8 @@ export default function App() {
                         {chapter.title}
                       </span>
                     </div>
-                    {activeChapterId === chapter.id ? (
-                      <ChevronDown className="w-4 h-4 text-indigo-400 shrink-0" />
-                    ) : (
-                      <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
-                    )}
+                    <ChevronRight className={`w-4 h-4 shrink-0 ml-2 ${activeChapterId === chapter.id ? 'text-indigo-400' : 'text-gray-400'}`} />
                   </button>
-                  
-                  <AnimatePresence>
-                    {activeChapterId === chapter.id && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden pl-10 pr-2 space-y-1"
-                      >
-                        {chapter.subSections.map((section) => (
-                          <button
-                            key={`mobile-section-${section.id}`}
-                            onClick={() => handleSectionClick(chapter.id, section.id)}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                              activeSection === section.id 
-                                ? 'bg-indigo-100 text-indigo-800 font-medium' 
-                                : 'text-gray-600 hover:bg-gray-50'
-                            }`}
-                          >
-                            {section.title}
-                          </button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               ))}
             </nav>
@@ -226,6 +134,7 @@ export default function App() {
               <div key={`desktop-chapter-${chapter.id}`} className="space-y-1">
                 <button
                   onClick={() => handleChapterClick(chapter.id)}
+                  aria-current={activeChapterId === chapter.id ? 'page' : undefined}
                   className={`w-full text-left px-3 py-2.5 rounded-lg flex items-start justify-between transition-all duration-200 group font-medium ${
                     activeChapterId === chapter.id
                       ? 'bg-indigo-50 text-indigo-700 shadow-sm'
@@ -245,38 +154,9 @@ export default function App() {
                     </span>
                   </div>
                   <div className="mt-1 shrink-0 ml-2">
-                    {activeChapterId === chapter.id ? (
-                      <ChevronDown className={`w-4 h-4 ${activeChapterId === chapter.id ? 'text-indigo-400' : 'text-gray-400 group-hover:text-gray-600'}`} />
-                    ) : (
-                      <ChevronRight className={`w-4 h-4 ${activeChapterId === chapter.id ? 'text-indigo-400' : 'text-gray-400 group-hover:text-gray-600'}`} />
-                    )}
+                    <ChevronRight className={`w-4 h-4 ${activeChapterId === chapter.id ? 'text-indigo-400' : 'text-gray-400 group-hover:text-gray-600'}`} />
                   </div>
                 </button>
-                
-                <AnimatePresence>
-                  {activeChapterId === chapter.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden pl-10 pr-2 space-y-1"
-                    >
-                      {chapter.subSections.map((section) => (
-                        <button
-                          key={`desktop-section-${section.id}`}
-                          onClick={() => handleSectionClick(chapter.id, section.id)}
-                          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                            activeSection === section.id 
-                              ? 'bg-indigo-100 text-indigo-800 font-medium shadow-sm' 
-                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                          }`}
-                        >
-                          {section.title}
-                        </button>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
             ))}
           </nav>
