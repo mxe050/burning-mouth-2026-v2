@@ -182,6 +182,11 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
+                onAnimationComplete={() => {
+                  if (isTmdDiscussion && window.location.hash) {
+                    document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+                  }
+                }}
                 className={isTmdDiscussion ? 'tmd-article' : 'space-y-16'}
               >
                 {/* Chapter Header */}
