@@ -16,10 +16,10 @@ export const tmdDiscussionChapter: Chapter = {
           <ul className="list-none space-y-3 text-lg text-indigo-900">
           <li><strong>・土俵が異なっていることを認識しない限り理解してもらえない</strong></li>
           <li>
-            <strong>・自分の目の前の患者層で物事を考えないことが世界（米国の補綴系）の潮流を理解するために必要である</strong>
+            <strong>・自分の目の前の患者層で物事を考えないことが世界（米国の口腔顔面痛系）の潮流を理解するために必要である</strong>
             <div className="mt-2">
               <a href="#tmd-discussion-us-prosthodontics" className="inline-flex min-h-11 max-w-full items-center gap-2 rounded-lg border border-indigo-200 bg-white px-3 py-2 text-base font-semibold no-underline transition-colors hover:bg-indigo-50">
-                米国の補綴系として理由
+                米国の口腔顔面痛系とした理由
                 <ArrowDown className="h-4 w-4 shrink-0" aria-hidden="true" />
               </a>
             </div>
@@ -281,7 +281,7 @@ export const tmdDiscussionChapter: Chapter = {
       content: (
         <div className="space-y-6 text-gray-700 leading-loose">
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">10-1．参加者の顔ぶれと、議論の中心は別である</h4>
-          <p>私が見聞きしてきた米国中心のTMDの議論では、さまざまな分野の先生が参加していても、中心は口腔外科ではありません。補綴系を背景とする先生たちの関心が強く表れています。</p>
+          <p>私が見聞きしてきた米国中心のTMDの議論では、さまざまな分野の先生が参加していても、中心は口腔外科ではありません。口腔顔面痛を専門とする先生たちの関心が強く表れています。</p>
           <p>この分野の中心的な先生の講演で、後から他分野の先生に文句を言われないよう、あらかじめ参加してもらう事情もある、という趣旨の話を聞きました。</p>
           <p><strong>多分野の先生が参加していることと、各分野の患者像が同じ比重で扱われることは別です。</strong>誰が主導し、どの患者の問題を解決しようとしているのか。そこを見る必要があります。</p>
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">10-2．高度専門診療と、地域の基礎教育を両方支える</h4>
@@ -309,7 +309,7 @@ export const tmdDiscussionChapter: Chapter = {
           <p>また、クリックやロックという呼び方だけで、予後がよいと判断することもできません。痛みのない関節雑音は通常治療を必要としませんが、疼痛や機能障害を伴う患者は別に評価します。(<a href="https://www.nidcr.nih.gov/health-info/tmd?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 hover:text-indigo-900 break-words">国立口腔顔面研究所</a>)</p>
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">11-3．出身分野と、現在の専門領域を区別する</h4>
           <p>米国では、口腔顔面痛は補綴や口腔顎顔面外科とは別の専門領域として認められています。(<a href="https://ncrdscb.ada.org/recognized-dental-specialties" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 hover:text-indigo-900 break-words">NCRD SCB</a>)</p>
-          <p>本稿の「米国の補綴系」は、私が接してきた先生たちの出身分野や研究上の関心を指します。現在の口腔顔面痛という専門領域そのものを、補綴と同一視する表現ではありません。</p>
+          <p>本稿で「米国の口腔顔面痛系」と呼ぶのは、TMD・口腔顔面痛の診療や研究を専門にする先生たちです。出身分野と現在の専門領域を分け、ここでは後者に注目しています。</p>
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">11-4．自費治療歴から見える、私の施設の患者層</h4>
           <p><strong>私の施設では、経過が思わしくない患者や口腔顔面痛の患者の8割近くに、自費治療またはインプラント治療の経験があります。</strong>これは診療経験に基づく目安で、全国の割合ではありません。</p>
           <p>私は治療歴を必ず尋ねます。何を期待し、どのような治療を受け、今は何に困っているのか。その経過を聞き、これからの対応に前向きな見通しを持てるよう説明します。</p>
@@ -324,7 +324,7 @@ export const tmdDiscussionChapter: Chapter = {
       content: (
         <div className="space-y-6 text-gray-700 leading-loose">
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">12-1．難治例への関心と、地域の患者数の間にずれがある</h4>
-          <p>私には、米国の補綴系を背景とするTMD・口腔顔面痛の研究は、難治例や慢性痛へ関心を強めているように見えます。従来から調べられてきたロック・クリックでは新規性を出しにくく、未解決の問題に研究が向かう事情もあると考えています。</p>
+          <p>私には、米国の口腔顔面痛系によるTMD研究は、難治例や慢性痛へ関心を強めているように見えます。従来から調べられてきたロック・クリックでは新規性を出しにくく、未解決の問題に研究が向かう事情もあると考えています。</p>
           <p>一方、私が地域の診療で多く接するのは、ロック・クリックを主訴とし、その後の経過もよい患者です。不安や困りごとはあっても、生活全体を妨げる難治性疼痛の患者と、必要な支援は同じではありません。</p>
           <p><strong>研究が注目する「改善が難しい患者」と、地域で数多く診る「経過のよい患者」。このずれを飛ばして、専門性や教育の方向を論じることに無理があります。</strong></p>
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">12-2．研究の対象は、研究者の外来患者とは限らない</h4>
@@ -367,10 +367,11 @@ export const tmdDiscussionChapter: Chapter = {
     },
     {
       id: "tmd-discussion-us-prosthodontics",
-      title: "米国の補綴系として理由",
+      title: "米国の口腔顔面痛系とした理由",
       content: (
         <div className="space-y-6 text-gray-700 leading-loose">
           <p><strong>2026年のEric Schiffman教授（米国ミネソタ州・ミネソタ大学、DC/TMD 2014年論文の筆頭著者）の講演より。</strong></p>
+          <p>Eric Schiffman教授は、ミネソタ大学の2年間のTMD・口腔顔面痛レジデンシーを修了し、現在は同大学の<strong>「TMD and Orofacial Pain（顎関節症・口腔顔面痛部門）」</strong>に所属する教授です。（<a href="https://dentistry.umn.edu/faculty/eric-schiffman" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 hover:text-indigo-900 break-words">ミネソタ大学の公式略歴</a>）</p>
           <p>講演は英語で行われました。以下は、英語が苦手な私が、つたないながらも理解した内容です。聞き違いや誤解により、全く違う意味に受け取っている可能性もあります。正確な逐語訳ではなく、著者の受け止めとしてお読みください。</p>
 
           <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">1．多数の著者名には、合意と支持を広げる狙いもあった</h4>
@@ -385,7 +386,7 @@ export const tmdDiscussionChapter: Chapter = {
           <p>そのために演者が目指していたのは、約10分で答えられ、点数の意味もその場で分かる質問票への簡略化でした。研究で使われる基準を、日々の診療でも使える道具にする。その課題が、私には強く印象に残りました。</p>
           <p>なお、2014年の原著では、Axis IIは予後の推定に加え、患者の振り分けや治療計画にも役立てる評価とされています。「治療には使わない」という意味ではありません。（<a href="https://pubmed.ncbi.nlm.nih.gov/24482784/" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 hover:text-indigo-900 break-words">DC/TMD 2014年原著</a>）</p>
 
-          <p><strong>この講演を聞き、私は「誰が枠組みを主導し、どの患者層を見ているのか」をいっそう意識しました。</strong>本稿で「米国の補綴系」と補う理由は、ここにあります。多分野の名前が並んでいても、関心の中心や日々向き合う患者層まで同じになるわけではない。それが、私の受け止めです。</p>
+          <p><strong>この講演を聞き、私は「誰が枠組みを主導し、どの患者層を見ているのか」をいっそう意識しました。</strong>本稿で「米国の口腔顔面痛系」と補う理由は、ここにあります。多分野の名前が並んでいても、関心の中心や日々向き合う患者層まで同じになるわけではない。それが、私の受け止めです。</p>
         </div>
       ),
     },
