@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { ArrowDown, MessageCircle } from 'lucide-react';
 import { Chapter } from '../types';
 
 export const tmdDiscussionChapter: Chapter = {
@@ -15,7 +15,15 @@ export const tmdDiscussionChapter: Chapter = {
           <p>地域で初めて相談を受ける患者と、治療を重ねても痛みが続く患者では、必要な診療が違います。一方の経験だけでTMD全体を語ると、議論がかみ合わなくなります。</p>
           <ul className="list-none space-y-3 text-lg text-indigo-900">
           <li><strong>・土俵が異なっていることを認識しない限り理解してもらえない</strong></li>
-          <li><strong>・自分の目の前の患者層で物事を考えないことが世界（米国の補綴系）の潮流を理解するために必要である</strong></li>
+          <li>
+            <strong>・自分の目の前の患者層で物事を考えないことが世界（米国の補綴系）の潮流を理解するために必要である</strong>
+            <div className="mt-2">
+              <a href="#tmd-discussion-us-prosthodontics" className="inline-flex min-h-11 max-w-full items-center gap-2 rounded-lg border border-indigo-200 bg-white px-3 py-2 text-base font-semibold no-underline transition-colors hover:bg-indigo-50">
+                米国の補綴系として理由
+                <ArrowDown className="h-4 w-4 shrink-0" aria-hidden="true" />
+              </a>
+            </div>
+          </li>
           </ul>
           <p>本稿は、私の診療経験、周囲の先生との会話、講演で聞いた話に基づく私見です。全国の実態調査ではありません。定義や診断分類には参考文献を添え、経験からの見解と区別しています。</p>
         </div>
@@ -354,6 +362,30 @@ export const tmdDiscussionChapter: Chapter = {
           <p><strong>「誰を、どの段階で、何のために診ているのか。」</strong></p>
           <p><strong>「同じ言葉を使っているが、同じ患者・同じ病態・同じ問題について話しているのか。」</strong></p>
           <p>患者像をそろえてから、治療と専門性を語る。私が提案したいのは、この順序です。</p>
+        </div>
+      ),
+    },
+    {
+      id: "tmd-discussion-us-prosthodontics",
+      title: "米国の補綴系として理由",
+      content: (
+        <div className="space-y-6 text-gray-700 leading-loose">
+          <p><strong>2026年のEric Schiffman教授（米国ミネソタ州・ミネソタ大学、DC/TMD 2014年論文の筆頭著者）の講演より。</strong></p>
+          <p>講演は英語で行われました。以下は、英語が苦手な私が、つたないながらも理解した内容です。聞き違いや誤解により、全く違う意味に受け取っている可能性もあります。正確な逐語訳ではなく、著者の受け止めとしてお読みください。</p>
+
+          <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">1．多数の著者名には、合意と支持を広げる狙いもあった</h4>
+          <p>著者名が数多く並ぶDC/TMDの論文を見ると、大勢の専門家が何十年もかけて議論を重ね、作り上げた印象を持ちます。しかし、演者は質疑応答で、<strong>データを集めた期間は2年間だった</strong>と説明していました。ここでの2年間はデータ収集の期間です。研究・開発全体が2年で完結した、という意味には取りません。</p>
+          <p>専門家に求めたのは、学術的な「意見」と、論文に載せる「名前」の二つだった、という話も印象に残りました。知見を取り入れるだけでなく、著者として名前を連ねてもらい、基準を支持してもらう。そのための政治的な意味もあった、という説明です。</p>
+          <p><strong>私が受け取ったのは、中核メンバーが作業を進め、幅広い専門家の参加によって合意と支持を広げた、という姿です。</strong>著者の多さと、全員が同じ役割で策定を担ったことは別です。学術的な作業と、基準を受け入れてもらうための合意形成。その両方があったのだと理解しました。</p>
+
+          <h4 className="text-xl font-bold text-indigo-900 leading-relaxed pt-6">2．Axis IIで重視されたのは、予後と対応の難しさの見極め</h4>
+          <p>Axis I（第1軸）は身体的な診断、Axis II（第2軸）は痛みによる生活への支障や心理社会的な状態などの評価です。二つの軸が並ぶと、私は「今後は第2軸を診断し、その治療を進めることが中心になる」という印象を持っていました。</p>
+          <p>ところが、紹介前にAxis IIがどれほど実施されているかという質問に、演者は、自身の地域ではほとんど行われていないと答えていました。さらに、一般歯科では対応が難しい患者が、自分の専門外来へ紹介されてくるとも話していました。これは、演者の地域と外来についての説明です。</p>
+          <p><strong>私が強く受け取ったのは、予後のよい患者と、経過が長引き対応が難しくなりそうな患者を見分ける、という役割です。</strong>Axis IIそのものを一つの病名のように診断し、それを治すという話ではなく、評価を通じて次の対応を考える仕組みだと理解しました。</p>
+          <p>そのために演者が目指していたのは、約10分で答えられ、点数の意味もその場で分かる質問票への簡略化でした。研究で使われる基準を、日々の診療でも使える道具にする。その課題が、私には強く印象に残りました。</p>
+          <p>なお、2014年の原著では、Axis IIは予後の推定に加え、患者の振り分けや治療計画にも役立てる評価とされています。「治療には使わない」という意味ではありません。（<a href="https://pubmed.ncbi.nlm.nih.gov/24482784/" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 hover:text-indigo-900 break-words">DC/TMD 2014年原著</a>）</p>
+
+          <p><strong>この講演を聞き、私は「誰が枠組みを主導し、どの患者層を見ているのか」をいっそう意識しました。</strong>本稿で「米国の補綴系」と補う理由は、ここにあります。多分野の名前が並んでいても、関心の中心や日々向き合う患者層まで同じになるわけではない。それが、私の受け止めです。</p>
         </div>
       ),
     },
